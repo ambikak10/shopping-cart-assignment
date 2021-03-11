@@ -110,22 +110,25 @@ input:focus {
 /* carousel */
 .container-slick {
   padding: 10px;
-  // background: #b6cee0;
 }
-.slick-slide img {
-  margin: auto;
-}
-button.slick-arrow {
-  background-color: rgb(117, 114, 114);
-  border-radius: 55%;
-  // margin-right: 30px;
-  // margin-left: 60px;
-}
-.slick-prev:hover,
-.slick-next:hover {
-  color: rgb(117, 114, 114);
-  opacity: 1;
-}
+// .carousel{
+//   width:90%;
+//   margin:0px auto;
+// }
+// .slick-slide img {
+//   margin: auto;
+// }
+// button.slick-arrow {
+//   background-color: rgb(117, 114, 114);
+//   border-radius: 55%;
+//   // margin-right: 30px;
+//   // margin-left: 60px;
+// }
+// .slick-prev:hover,
+// .slick-next:hover {
+//   color: rgb(117, 114, 114);
+//   opacity: 1;
+// }
 .banner {
   width: 900px;
 }

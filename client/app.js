@@ -12,15 +12,16 @@ const routes = {
   "/signup": SignupScreen,
   "/cart": CartScreen,
   "/login": LoginScreen,
+  "/products/:id": ProductsScreen,
 };
 const router = async() => {
   const request = parseRequestUrl();
  const parseUrl =
    (request.resource ? `/${request.resource}` : "/") 
-  //  +
-  //  (request.id ? "/:id" : "") +
-  //  (request.verb ? `/${request.verb}` : "");
-  // console.log(request);
+   +
+   (request.id ? "/:id" : "") +
+   (request.verb ? `/${request.verb}` : "");
+  console.log(request);
     const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
   const main = document.getElementById('middle');
   main.innerHTML = await screen.render();

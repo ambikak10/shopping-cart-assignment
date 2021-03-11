@@ -15,11 +15,13 @@ app.use(cors());
 // });
 
 app.get("/api/banners", (req, res) => {
+  console.log("banner api");
+  //console.log(banners)
   res.send(banners);
 });
 
 app.get("/api/categories", (req, res) => {
-  console.log("hello");
+   console.log("categories api");
   res.send(categories);
 });
 
