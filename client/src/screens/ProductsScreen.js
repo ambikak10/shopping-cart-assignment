@@ -1,4 +1,4 @@
-import { parseRequestUrl } from "../utils.js";
+import { parseRequestUrl } from "../supportingJSFiles/utils.js";
 const ProductsScreen = {
   render: async () => {
     const resCategories = await fetch("http://localhost:5000/api/categories", {

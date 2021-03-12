@@ -11,7 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabka Bazaar</title>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="./src/supportingJSFiles/app.js"></script>
 
 </head>
 
@@ -21,7 +21,7 @@
       <section>
         <ul>
           <li>
-            <img src="logo.png" alt='logo' />
+            <img src="/client/assets/logo.png" alt='logo' />
           </li>
           <li class='home-products'>
             <a href='/client/#/home'>Home</a>
@@ -39,21 +39,22 @@
           </li>
           <a href='/client/#/cart'>
             <button style="background-color: transparent; outline: none; border: none;">
-              <img class='cart-nav' src="./cart.svg" alt='cart-logo' />
+              <img class='cart-nav' src="/client/assets/cart.svg" alt='cart-logo' />
             </button>
           </a>
         </ul>
       </section>
     </div>
   </div>
-  <!-- <div class='container'> -->
+
   <main id="middle"></main>
 
   <div class='footer'>
     Copyright &#169; 2011-2021 Sabka Bazaar Grocery Supplies Pvt Ltd
   </div>
 
-    <script type="module" src="validationLogin.js"></script>
-      <script type="module" src="validationSignup.js"></script>
+  <script type="module" src="src/supportingJSFiles/validationLogin.js"></script>
+  <script type="module" src="src/supportingJSFiles/ValidationSignup.js"></script>
 </body>
+
 </html>
