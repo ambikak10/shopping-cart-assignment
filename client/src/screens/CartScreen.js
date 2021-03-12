@@ -36,7 +36,7 @@ const CartScreen = {
 
           <div class='wont-find-cheaper'>
             <img src={lowestPrice} />
-            {/* You won't find it cheaper anywhere */}
+          
             <span>You won't find it cheaper anywhere</span>
           </div>
 

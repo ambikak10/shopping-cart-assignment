@@ -1,2 +1,22 @@
 $primary-color: grey;
 $secondary-color: rgb(216, 216, 216);
+$widthHeight:  6.25rem;
+$myMeasure: 0.0625rem;
+$primaryMeasure: 0.625rem;
+$primaryColor: rgb(224, 33, 90);
+$textColor: white;
+$margin-or-padding: 1.25rem;
+$secondary-measurement: 1.875rem;
+$tertiary-measurement:  0.9375rem;
+$fourth-measurement:  3.125rem;
+$fifth-measurement: 0.1875rem;
+$sixth-measurement: 0.3125rem;
+
+@mixin displayFlex {
+  display: flex;
+  align-items: center;
+}
+@mixin marginAuto {
+  margin-left: auto;
+  margin-right: auto;
+}

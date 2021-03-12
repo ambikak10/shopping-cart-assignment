@@ -5,7 +5,7 @@
    box-sizing: border-box;
 }
 .navbar {
-  height: 6.25rem;
+  height: $widthHeight;
   width: 100%;
   border: 0.0625rem solid rgb(224, 221, 221);
   box-shadow: 0 0.0625rem 0.5rem rgb(199, 198, 198);
@@ -14,14 +14,12 @@ li > img {
   width: 7.875rem;
   height: 3.75rem;
 }
-
 a {
   color: $primary-color;
   text-decoration: none;
 }
 .navbar section {
-  display: flex;
-  align-items: center;
+   @include  displayFlex;
   justify-content: space-between;
   width: 100%;
 
@@ -30,15 +28,15 @@ a {
     list-style-type: none;
   }
   li {
-    padding: 0.625rem;
+    padding: $primaryMeasure;
   }
-  a {
+  a { 
     color: $primary-color;
     text-decoration: none;
   }
   .home-products {
-    margin-top: 0.9375rem;
-    margin-left: 1.875rem;
+    margin-top: $tertiary-measurement;
+    margin-left: $secondary-measurement;
     margin-right: -2.1875rem;
   }
   a:hover {
@@ -47,27 +45,24 @@ a {
 }
 .signup-login {
   float: right;
-  display: flex;
-  align-items: center;
+ @include  displayFlex;
   justify-content: center;
 }
 .cart-nav {
-  height: 3.125rem;
+  height: $fourth-measurement;
   width: 2.5rem;
 }
 .footer {
   width: 100%;
-  display: flex;
-  align-items: center;
+   @include  displayFlex;
   justify-content: center;
-  height: 1.875rem;
+  height: $secondary-measurement;
   background-color: rgb(209, 209, 209);
 }
 .login {
-  display: flex;
-  align-items: center;
+   @include  displayFlex;
   justify-content: space-evenly;
-  margin-bottom: 1.25rem;
+  margin-bottom: $margin-or-padding;
 }
 input {
   background-color: transparent;
@@ -78,14 +73,14 @@ input {
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: solid grey 0.0625rem;
-  padding: 0.1875rem 0.625rem;
+  border-bottom: solid grey $myMeasure;
+  padding: $fifth-measurement $primaryMeasure;
   margin-top: -6.25rem;
 }
 .field {
   color: $primary-color;
-  padding-top: 0.625rem;
-  margin-bottom: -0.0625rem;
+  padding-top: $primaryMeasure;
+  margin-bottom: -$myMeasure;
   width: 9.375rem;
   display: block;
 }
@@ -98,22 +93,21 @@ input:focus {
 .authButton {
   display: block;
   width: 15.5rem;
-  height: 1.875rem;
+  height: $secondary-measurement;
   margin-top: 2.5rem;
   border: None;
-  color: white;
-  background-color: rgb(224, 33, 90);
-  margin-left: auto;
-  margin-right: auto;
+  color: $textColor;
+  background-color: $primaryColor;
+ @include marginAuto;
 }
 #error {
   color: red;
   text-align: center;
-  padding-bottom: 1.25rem;
+  padding-bottom:  $margin-or-padding;
 }
 /* carousel */
 .container-slick {
-  padding: 0.625rem;
+  padding: $primaryMeasure;
 }
 // .carousel{
 //   width:90%;
@@ -143,7 +137,7 @@ input:focus {
   width: 100%;
   position: relative;
   margin-top: 3.75rem;
-  margin-bottom: 1.875rem;
+  margin-bottom: $secondary-measurement;
 }
 .fancy-line:before {
   top: 0;
@@ -168,8 +162,7 @@ input:focus {
   );
 }
 .home-categories {
-  display: flex;
-  align-items: center;
+   @include  displayFlex;
   justify-content: space-evenly;
   margin-bottom: 2.5rem;
   min-width: 0;
@@ -185,7 +178,7 @@ input:focus {
 .homeCategoriesButton {
   @extend .authButton;
   height: 2.5rem;
-  color: white;
+  color: $textColor;
 }
 .productPage-categories {
   background-color: rgb(231, 230, 230);
@@ -194,14 +187,14 @@ input:focus {
     color: $primary-color;
     text-decoration: none;
     display: block;
-    margin-left: 1.25rem;
-    padding: 0.625rem 0.625rem 0rem 0.625rem;
+    margin-left:  $margin-or-padding;
+    padding: 0.625rem 0.625rem 0rem $primaryMeasure;
   }
   a:hover {
     color: $secondary-color;
   }
   div {
-    height: 3.125rem;
+    height: $fourth-measurement;
     border-bottom: 0.0625rem solid rgb(199, 196, 196);
     box-shadow: 0rem 0.03125rem 0.03125rem rgb(199, 196, 196);
   }
@@ -218,12 +211,12 @@ input:focus {
   height:33.125rem;
   width: 100%;
   z-index: 100;
-  box-shadow: 0.1875rem 0.0625rem 0.6875rem 0px #f7f6f6;
+  box-shadow: $fifth-measurement 0.0625rem 0.6875rem 0px #f7f6f6;
 
   p {
-    padding-top: 1.875rem;
-    padding-bottom: 0.3125rem;
-    font-size: 1.25rem;
+    padding-top: $secondary-measurement;
+    padding-bottom: $sixth-measurement;
+    font-size:  $margin-or-padding;
     height: 3.75rem;
     margin-left: 1.5625rem;
   }
@@ -231,51 +224,47 @@ img {
     height: 12.5rem;
     width: 13.125rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3.125rem;
+   @include marginAuto;
+    margin-top:$fourth-measurement;
   }
   section {
-    height: 6.25rem;
+    height: $widthHeight;
     width: 13.125rem;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    @include marginAuto;
     background-color: rgb(231, 230, 230);
-    margin-top: 1.25rem;
+    margin-top:  $margin-or-padding;
     overflow: hidden;
-    padding-left: 0.3125rem;
+    padding-left: $sixth-measurement;
     font-weight: 400;
   }
  div {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    height: 3.125rem;
+    @include marginAuto;
+    height: $fourth-measurement;
     width: 13.125rem;
-    margin-top: 0.9375rem;
-    display: flex;
+    margin-top:$tertiary-measurement;
+     @include  displayFlex;
     justify-content: space-between;
-    align-items: center;
+    
   }
   button {
     border: None;
-    color: white;
-    background-color: rgb(224, 33, 90);
-    padding: 0.3125rem;
-    width: 6.25rem;
+    color:$textColor;
+    background-color: $primaryColor;
+    padding: $sixth-measurement;
+    width: $widthHeight;
   }
 }
 .center {
-  display: flex;
+   @include  displayFlex;
   justify-content: center;
   flex-direction: row;
-  align-items: center;
+  
 }
 .cartcard {
   justify-content: center;
-  display: flex;
-  align-items: center;
+   @include  displayFlex;
   height: 100vh;
 }
 .flex-box {
@@ -289,7 +278,7 @@ img {
   border: 0.0125rem solid rgb(131, 127, 127);
   width: 25rem;
   height: 36.25rem;
-  background-color:white;
+  background-color:$textColor;
   position: relative;
 }
 
@@ -298,29 +287,29 @@ img {
   background-color: rgb(48, 46, 46);
 
   h6 {
-    color: white;
-    padding-top: 0.9375rem;
-    padding-left: 1.25rem;
+    color: $textColor;
+    padding-top: $tertiary-measurement;
+    padding-left:  $margin-or-padding;
   }
   span {
     padding-left: 0.375rem;
-    font-size: 0.9375rem;
+    font-size: $tertiary-measurement;
   }
   .close-x {
     float: right;
-    color: white;
+    color: $textColor;
     background: transparent;
     border: none;
     outline: none;
     font-size: 1.5rem;
     margin-right: 0.375rem;
-    margin-bottom: 0.625rem;
-    margin-top: -0.3125rem;
+    margin-bottom: $primaryMeasure;
+    margin-top: -$sixth-measurement;
   }
 }
 .cart-items {
   width: 100%;
-  background-color: white;
+  background-color: $textColor;
   height: 5rem;
   margin-top: 0.8125rem;
   .lg-7 > p {
@@ -328,27 +317,27 @@ img {
   }
 }
 .plus {
-  width: 0.9375rem;
-  height: 0.9375rem;
+  width: $tertiary-measurement;
+  height: $tertiary-measurement;
   border-radius: 50%;
-  background-color: rgb(224, 33, 90);
+  background-color: $primaryColor;
   position: relative;
   display: inline-block;
-  margin-right: 0.9375rem;
-  margin-bottom: 1.25rem;
-  margin-top: -0.1875rem;
+  margin-right: $tertiary-measurement;
+  margin-bottom:  $margin-or-padding;
+  margin-top: -$fifth-measurement;
 }
 .dash {
   position: absolute;
   bottom: 0.125;
   left: 0.28rem;
   top: -0.4rem;
-  color: white;
+  color: $textColor;
   width: 0.1rem;
 }
 .qt {
   position: absolute;
-  left: 8.3125rem;
+  left: 7.6rem;
   margin-top: -0.5rem;
 }
 .price {
@@ -358,40 +347,40 @@ img {
 }
 .rupees {
   position: absolute;
-  right: 0.625rem;
+  right: $primaryMeasure;
   top: 6.625rem;
 }
 .apple {
   width: 4.6875rem;
   height: 4.6875rem;
   padding: 0.4375rem;
-  margin-left: 0.625rem;
+  margin-left: $primaryMeasure;
 }
 .wont-find-cheaper {
   @extend .cart-items;
   margin: 0 auto;
   width: 23.125rem;
   height: 2.8125rem;
-  margin-top: 0.9375rem;
-  border-radius: 0.0625rem;
+  margin-top: $tertiary-measurement;
+  border-radius: $myMeasure;
   position: relative;
   img {
-    width: 6.25rem;
-    margin-right: 0.625rem;
-    padding-left: 0.625rem;
-    padding-top: 0.3125rem;
+    width: $widthHeight;
+    margin-right: $primaryMeasure;
+    padding-left: $primaryMeasure;
+    padding-top: $sixth-measurement;
   }
   span {
     font-size: 0.875rem;
-    padding-left: 0.625rem;
-    margin-top: 1.875rem;
-    margin-bottom: -1.25rem;
+    padding-left: $primaryMeasure;
+    margin-top: -0.6rem;
+    margin-bottom: -$margin-or-padding;
     position: absolute;
-    top: -1.25rem;
+    top:  $margin-or-padding;
   }
 }
 .cart-footer {
-  background-color: white;
+  background-color:$textColor;
   position: absolute;
   bottom: 0;
   height: 6.875rem;
@@ -400,26 +389,26 @@ img {
   p {
     text-align: center;
     font-size: 0.9rem;
-    margin-top: 0.625rem;
+    margin-top: $primaryMeasure;
   }
   button {
     border: None;
-    color: white;
-    background-color: rgb(224, 33, 90);
+    color: $textColor;
+    background-color:$primaryColor;
     margin: 0 auto;
     width: 23.125rem;
-    height: 3.125rem;
+    height: $fourth-measurement;
     display: block;
-    border-radius: 0.1875rem;
+    border-radius: $fifth-measurement;
     position: relative;
     span {
       position: absolute;
-      left: 0.625rem;
-      top: 0.625rem;
+      left: $primaryMeasure;
+      top: $primaryMeasure;
     }
     p {
       float: right;
-      margin-right: 1.875rem;
+      margin-right: $secondary-measurement;
     }
   }
 }
