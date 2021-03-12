@@ -27,6 +27,7 @@ const ProductsScreen = {
         return item.category === _id;
       });
     }
+
     return `
     <div class='container'>
       <div class='row'>
@@ -34,9 +35,11 @@ const ProductsScreen = {
           ${categories
             .map((item) => {
               return `
-              <div>
-                <a href='/#/category/${item.id}'>${item.name}</a>
-              </div>`;
+             ${item.id === _id ?  `<div id="highlight">
+                <a href='/client/#/products/${item.id}'>${item.name}</a>
+              </div>`: `<div>
+                <a href='/client/#/products/${item.id}'>${item.name}</a>
+              </div>`}`
             })
             .join("\n")}
         </div>
@@ -44,7 +47,6 @@ const ProductsScreen = {
           <div class='custom-row'>
             ${products
               .map((item) => {
-                console.log(item.imageUrl);
                 return `
                 <div class='lg-3 products-page-card'>
                   <p>${item.name}</p>
