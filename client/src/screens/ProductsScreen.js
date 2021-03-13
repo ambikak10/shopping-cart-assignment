@@ -1,4 +1,5 @@
 import { parseRequestUrl } from "../supportingJSFiles/utils.js";
+
 const ProductsScreen = {
   render: async () => {
     const resCategories = await fetch("http://localhost:5000/api/categories", {
@@ -50,11 +51,11 @@ const ProductsScreen = {
                 return `
                 <div class='lg-3 products-page-card'>
                   <p>${item.name}</p>
-                  <img src=${item.imageURL} />
+                  <img src=${item.imageURL} alt="products image"/>
                   <section>${item.description}</section>
                   <div>
                     <span>MRP Rs.${item.price}</span>
-                    <button type='submit'>
+                    <button id="buy-now" onclick=${myFunction()}>
                       Buy Now
                     </button>
                   </div>

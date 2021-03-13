@@ -53,8 +53,8 @@ const HomeScreen = {
                   <div class='home-categories'>
                     <img class='category-image' src=${item.imageUrl} />
                     <div style='text-align: center'>
-                      <h3>${item.name}</h3>
-                      <div style='word-wrap: break-word; width: 390px;'>
+                      <p>${item.name}</p>
+                      <div style='word-wrap: break-word; width: 390px;font-size: 1.2rem'>
                         ${item.description}
                       </div>
 
@@ -71,16 +71,16 @@ const HomeScreen = {
                 <div class='row'>
                   <div class='home-categories'>
                     <div style='text-align:center'>
-                      <h3>${item.name}</h3>
-                      <p style='word-break: break-word; width: 380px';>
+                      <p>${item.name}</p>
+                      <div style='word-break: break-word; width: 380px; font-size: 1.2rem'>
                         ${item.description}
-                      </p>
+                      </div>
                       <button onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
                     <img class='category-image'
-                      src=${item.imageUrl}
+                      src=${item.imageUrl} alt="category image"
                     />
                   </div>
                   <div class='fancy-line'></div>

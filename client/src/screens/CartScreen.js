@@ -5,15 +5,15 @@ const CartScreen = {
       <div class='cartcard'>
         <div class='flex-box'>
           <nav class='cart-flex-nav'>
-            <h6>
+            <p>
               My Cart<span>(1 item)</span>
               <button class='close-x'>X</button>
-            </h6>
+            </p>
           </nav>
 
           <div class='cart-items'>
             <div class='lg-3'>
-              <img class='apple' src={apple} />
+              <img class='apple' src={apple} alt="image of the item"/>
             </div>
             <div class='lg-7 '>
               <p> Apples</p>
@@ -35,7 +35,7 @@ const CartScreen = {
           </div>
 
           <div class='wont-find-cheaper'>
-            <img src={lowestPrice} />
+            <img src={lowestPrice}/>
           
             <span>You won't find it cheaper anywhere</span>
           </div>
