@@ -1,4 +1,5 @@
 const HomeScreen = {
+ 
   render: async () => {
 
      const resCategories = await fetch("http://localhost:5000/api/categories", {

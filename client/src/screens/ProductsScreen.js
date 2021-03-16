@@ -55,7 +55,7 @@ const ProductsScreen = {
                   <section>${item.description}</section>
                   <div>
                     <span>MRP Rs.${item.price}</span>
-                    <button id="buy-now" onclick=${myFunction()}>
+                    <button id="buy-now" >
                       Buy Now
                     </button>
                   </div>
@@ -69,3 +69,4 @@ const ProductsScreen = {
   },
 };
 export default ProductsScreen;
+//onclick="return addToCart('${item.id}')"
