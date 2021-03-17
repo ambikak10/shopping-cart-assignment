@@ -4,20 +4,20 @@ const CartScreen = {
     <div class='center'>
       <div class='cartcard'>
         <div class='flex-box'>
-          <nav class='cart-flex-nav'>
+          <div class='cart-flex-nav'>
             <p>
               My Cart<span>(1 item)</span>
               <button class='close-x'>X</button>
             </p>
-          </nav>
+          </div>
 
           <div class='cart-items'>
             <div class='lg-3'>
-              <img class='apple' src={apple} alt="image of the item"/>
+              <img class='apple' src="http://127.0.0.1:5500/static/images/products/fruit-n-veg/apple.jpg" alt="image of the item"/>
             </div>
             <div class='lg-7 '>
               <p> Apples</p>
-              <span>
+             
                 <span class='plus'>
                   <span class='dash'>-</span>
                 </span>
@@ -29,13 +29,13 @@ const CartScreen = {
                 <span class="price">
                   X&nbsp;&nbsp;&nbsp; Rs.187
                 </span>
-              </span>
+              
             </div>
             <span class='lg-2 rupees'>Rs.187</span>
           </div>
 
           <div class='wont-find-cheaper'>
-            <img src={lowestPrice}/>
+            <img src="http://127.0.0.1:5500/static/images/lowest-price.png"/>
           
             <span>You won't find it cheaper anywhere</span>
           </div>
