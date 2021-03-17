@@ -422,7 +422,9 @@ img {
     }
   }
 }
-
+#items {
+  color: black;
+}
 /***********custom row and grid*********/
 @media (min-width: 700px) {
   .lg-1,

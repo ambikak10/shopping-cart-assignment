@@ -11,9 +11,9 @@ const fs = require("fs");
 app.use(cors());
 
 //Body parser configuration
-// app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
-
+var arrayOfItems = [];
 /* Redirect all routes to our (soon to exist) "index.html" file */
 
  app.get("/", (req, res) => {
@@ -35,6 +35,11 @@ app.get("/api/products", (req, res) => {
 app.get("/api/items", (req, res) => {
   res.send(items)
 });
+
+// app.post("/api/cart/add"), (req, res) => {
+//   console.log("inside add")
+//   console.log(req.body)
+// }
 // app.post("/api/cart/add", (req, res) => {
 //   //  console.log(addToCart);
 //   console.log(req.body);
@@ -47,23 +52,44 @@ app.get("/api/items", (req, res) => {
     // res.send(JSON.parse(data.reponse));
   // });
 
-// app.post("/api/cart/add", (req, res) => {
-//   console.log(req.body)
-//   const data =  req.body;
-//    console.log(data);
-  
-// // fs.readFile("addToCart", function (err, data) {
-//   // var json = JSON.parse(data);
-//   // json.push(req.body);
-//   //var json =  JSON.parse(addToCart[0]);
-//   // var json =
-//   addToCart.push(req.body);
+app.post("/api/cart/add", (req, res) => {
+  console.log(req.body);
+  arrayOfItems.push(req.body._id);
+  console.log(arrayOfItems);
+  var x = arrayOfItems.length;
+  var obj = {myItems: x};
+  res.send(JSON.stringify(obj));
 
-//   // fs.writeFile("addToCart", JSON.stringify(json));
-// // });
-
-// });
+});
+app.get("/api/cart/numberOfItems", (req, res) => {
+  var numOfItems = arrayOfItems.length;
+  console.log(numOfItems)
+  res.send(numOfItems);
+})
 
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
+
+
+  // var json = JSON.parse(data);
+  // json.push(req.body);
+  //var json =  JSON.parse(addToCart[0]);
+  // var json =
+  // addToCart.push(req.body);
+
+  // fs.writeFile("addToCart", JSON.stringify(json));
+// });
+
+
+// fs.readFile("server/addToCart/index.post.json", function (err, data) {
+//   if (err) {
+//     throw err;
+//   }
+//   const content = data;
+//   console.log(typeof(content));
+
+//   var json = JSON.parse(content);
+//   console.log(json)
+//   content.push(req.body);
+//   // fs.writeFile("server/addToCart/index.post.json", JSON.stringify(content));
