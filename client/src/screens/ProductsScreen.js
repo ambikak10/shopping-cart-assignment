@@ -55,7 +55,7 @@ const ProductsScreen = {
                   <section>${item.description}</section>
                   <div>
                     <span>MRP Rs.${item.price}</span>
-                    <button id="buy-now" >
+                    <button id="buy-now" onclick="return addToCart('${item.id}')>
                       Buy Now
                     </button>
                   </div>

@@ -68,9 +68,9 @@ const SignupScreen = {
         </div>   
         </form>
       </div>
-        <div id="error"></div>
+        <div tabindex="0"aria-live="assertive" role="alert" id="error"></div>
     </div>
-    `
+    `;
   },
 };
 export default SignupScreen;
