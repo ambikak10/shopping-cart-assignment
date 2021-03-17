@@ -10,7 +10,7 @@ const CartScreen = {
        return "<div>Error in getting products</div>";
      }
         const cartItems = await res.json();
-        console.log(cartItems);
+       
      const totalItems =  cartItems.length;
      if(totalItems !== 0){
     return `
@@ -20,7 +20,7 @@ const CartScreen = {
           <div class='cart-flex-nav'>
             <p>
               My Cart <span>( ${totalItems}  items )</span>
-              <button class='close-x'>X</button>
+              <button class='close-x'onclick="window.history.back()">X</button>
             </p>
           </div>
           <div class="wrapping">
@@ -34,17 +34,16 @@ const CartScreen = {
             </div>
             <div class='lg-7 '>
               <p>${item.name}</p>
-                <span class='plus'>
-                  <span class='dash'>-</span>
-                </span>
+               <span> <button class='decrement'>
+                  <span class="plusOrMinus">-</span>
+                </button>
                 <span class='qt'>1</span>
-                <span class='plus'>
-                  <span class='dash'>+</span>
-                </span>
-
+                <button class='increment'>
+                  <span class="plusOrMinus">+</span>
+                </button>
                 <span class="price">
-                  X&nbsp;&nbsp;&nbsp; Rs.187
-                </span>
+                  X&nbsp;&nbsp;&nbsp; Rs.${item.price}
+                </span></span>
               
             </div>
             <span class='lg-2 rupees'>Rs.187</span>
@@ -61,25 +60,24 @@ const CartScreen = {
 
           <div class='cart-footer'>
             <p>Promo code can be applied on payment change</p>
-            <button type='submit'>
+            <button onclick="window.history.back()" type='submit'>
               <span>Proceed to checkout</span>
               <p>Rs.187&nbsp; &nbsp; &gt;</p>
             </button>
           </div>
         </div>
       </div>
-    </div>`;
-    } else {
-     return `
-      <div className='center'>
-      <div className='cartcard'>
-        <div className='flex-box-empty'>
-          <nav className='cart-flex-nav'>
-            <h6>
+    </div>`;} else {
+      return `
+           <div class='center'>
+      <div class='cartcard'>
+        <div class='flex-box-empty'>
+          <div class='cart-flex-nav'>
+            <p>
               My Cart
-              <button className='close-x'>X</button>
-            </h6>
-          </nav>
+              <button onclick="window.history.back()" class='close-x'>X</button>
+            </p>
+          </div>
           <div
             style="
               display: flex;
@@ -91,29 +89,27 @@ const CartScreen = {
           >
             <section>
               
-              <p style="marginBottom: -4px">No items in your cart</p>
+              <p style="marginBottom: -4px; font-size:1.2rem">No items in your cart</p>
               <p
                 style="display: "inline-block";
-                  font-size: 13px;
-                  font-weight: 100;"
+                  font-weight: 100;font-size:1rem;"
               
               >
                 Your favourite items are just a click away.
               </p>
             </section>
 
-            <div className='cart-footer' style=" border-top: transparent">
-              <button style='margin-top:40px'type='submit'>
-                Start Shopping
-                
+            <div class='cart-footer' style=" border-top: transparent">
+              <button onclick="window.location.href='/client/#/products'"  style='margin-top:40px'type='submit'>
+                Start Shopping        
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-     `;
-  }
-}
+      `;
+    }
+          }
 }
 export default CartScreen;

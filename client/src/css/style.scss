@@ -1,8 +1,8 @@
 @import "config";
 // 1rem=16px
-*{
-   font-family: 'Dosis';
-   box-sizing: border-box;
+* {
+  font-family: "Dosis";
+  box-sizing: border-box;
 }
 .navbar {
   height: $widthHeight;
@@ -19,7 +19,7 @@ a {
   text-decoration: none;
 }
 .navbar section {
-   @include  displayFlex;
+  @include displayFlex;
   justify-content: space-between;
   width: 100%;
 
@@ -30,7 +30,7 @@ a {
   li {
     padding: $primaryMeasure;
   }
-  a { 
+  a {
     color: $primary-color;
     text-decoration: none;
   }
@@ -45,7 +45,7 @@ a {
 }
 .signup-login {
   float: right;
- @include  displayFlex;
+  @include displayFlex;
   justify-content: center;
 }
 .cart-nav {
@@ -54,13 +54,13 @@ a {
 }
 .footer {
   width: 100%;
-   @include  displayFlex;
+  @include displayFlex;
   justify-content: center;
   height: $secondary-measurement;
   background-color: rgb(209, 209, 209);
 }
 .login {
-   @include  displayFlex;
+  @include displayFlex;
   justify-content: space-evenly;
   margin-bottom: $margin-or-padding;
 }
@@ -98,21 +98,21 @@ input:focus {
   border: None;
   color: $textColor;
   background-color: $primaryColor;
- @include marginAuto;
+  @include marginAuto;
 }
 #error {
   color: red;
   text-align: center;
-  padding-bottom:  $margin-or-padding;
+  padding-bottom: $margin-or-padding;
 }
 /* carousel */
 .container-slick {
   padding: $primaryMeasure;
 }
-.carousel{
- width: 60rem; 
- height: 15rem;
- margin: 0 auto;
+.carousel {
+  width: 60rem;
+  height: 15rem;
+  margin: 0 auto;
 }
 // .slick-slide img {
 //   margin: auto;
@@ -120,7 +120,6 @@ input:focus {
 button.slick-arrow {
   background-color: rgb(117, 114, 114);
   border-radius: 55%;
-  ;
   // margin-right: 30px;
   // margin-left: 60px;
 }
@@ -165,7 +164,7 @@ button.slick-arrow {
   );
 }
 .home-categories {
-   @include  displayFlex;
+  @include displayFlex;
   justify-content: space-evenly;
   margin-bottom: 2.5rem;
   min-width: 0;
@@ -178,8 +177,8 @@ button.slick-arrow {
 .name-fontsize {
   font-size: large;
 }
-p{
-  font-size: calc(1.3rem + .6vw);
+#homepage-itemname {
+  font-size: calc(1.3rem + 0.6vw);
 }
 .homeCategoriesButton {
   @extend .authButton;
@@ -193,7 +192,7 @@ p{
     color: $primary-color;
     text-decoration: none;
     display: block;
-    margin-left:  $margin-or-padding;
+    margin-left: $margin-or-padding;
     padding: 0.625rem 0.625rem 0rem $primaryMeasure;
   }
   a:hover {
@@ -214,7 +213,7 @@ p{
 }
 
 .products-page-card {
-  height:33.125rem;
+  height: 33.125rem;
   width: 100%;
   z-index: 100;
   box-shadow: $fifth-measurement 0.0625rem 0.6875rem 0px #f7f6f6;
@@ -222,17 +221,17 @@ p{
   p {
     margin-top: 1rem;
     padding-bottom: $sixth-measurement;
-    font-size:  $margin-or-padding;
+    font-size: $margin-or-padding;
     height: 3.75rem;
     margin-left: 1.5625rem;
     margin-bottom: 4rem;
   }
-img {
+  img {
     height: 10.8rem;
     width: 13.125rem;
     display: block;
-   @include marginAuto;
-    margin-top:$fourth-measurement;
+    @include marginAuto;
+    margin-top: $fourth-measurement;
   }
   section {
     height: $widthHeight;
@@ -240,38 +239,36 @@ img {
     display: block;
     @include marginAuto;
     background-color: rgb(231, 230, 230);
-    margin-top:  $margin-or-padding;
+    margin-top: $margin-or-padding;
     overflow: hidden;
     padding-left: $sixth-measurement;
     font-weight: 400;
   }
- div {
+  div {
     display: block;
     @include marginAuto;
     height: $fourth-measurement;
     width: 13.125rem;
-    margin-top:$tertiary-measurement;
-     @include  displayFlex;
+    margin-top: $tertiary-measurement;
+    @include displayFlex;
     justify-content: space-between;
-    
   }
   button {
     border: None;
-    color:$textColor;
+    color: $textColor;
     background-color: $primaryColor;
     padding: $sixth-measurement;
     width: $widthHeight;
   }
 }
 .center {
-   @include  displayFlex;
+  @include displayFlex;
   justify-content: center;
   flex-direction: row;
-  
 }
 .cartcard {
   justify-content: center;
-   @include  displayFlex;
+  @include displayFlex;
   height: 100vh;
 }
 .flex-box {
@@ -281,11 +278,11 @@ img {
   background-color: rgb(233, 233, 233);
   position: relative;
 }
-.flex-box-empty{
+.flex-box-empty {
   border: 0.0125rem solid rgb(131, 127, 127);
   width: 25rem;
   height: 36.25rem;
-  background-color:$textColor;
+  background-color: $textColor;
   position: relative;
 }
 
@@ -296,8 +293,8 @@ img {
   p {
     color: $textColor;
     padding-top: $primaryMeasure;
-    padding-left:  $margin-or-padding;
-    font-size: 1.3rem;
+    padding-left: $margin-or-padding;
+    font-size: 1.1rem;
   }
   span {
     padding-left: 0.375rem;
@@ -315,7 +312,7 @@ img {
     margin-top: -$sixth-measurement;
   }
 }
-.wrapping{
+.wrapping {
   overflow-y: auto;
   //width: 100%;
   height: 20.25rem;
@@ -325,45 +322,53 @@ img {
   background-color: $textColor;
   height: 5rem;
   margin-top: 0.8125rem;
-  
-  
-  .lg-7 > p {
-    margin-top:0.5rem;
-    font-size: 0.9rem;
-  }
 
+  .lg-7 > p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    // position: relative;
+    margin-bottom: 0.1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
 }
-.plus {
-  width: $tertiary-measurement;
-  height: $tertiary-measurement;
-  border-radius: 50%;
-  background-color: $primaryColor;
-  position: relative;
-  display: inline-block;
-  margin-right: $tertiary-measurement;
-  margin-bottom:  $margin-or-padding;
-  margin-top: -$primaryMeasure;
+
+ .decrement{
+   @include plus-minus;
+   margin-right: 2rem;
+ }
+
+.increment {
+ @include plus-minus;
 }
-.dash {
+.plusOrMinus {
   position: absolute;
   bottom: 0.125;
   left: 0.28rem;
   top: -0.45rem;
   color: $textColor;
   width: 0.1rem;
+
 }
 .qt {
   position: relative;
-  left: -0.55rem;
-  top: -7.2rem;
+  left: -0.9rem;
+  top: 0.4rem;
+  // margin-bottom: $margin-or-padding;
+  // margin-top: -$primaryMeasure;
+  // margin-left: -0.5rem;
+  // margin-right: -0.5rem;
+
 }
 .price {
- @extend .qt;
+  @extend .qt;
+  margin-left: 1rem;
 }
 .rupees {
-  position: relative;
   right: $primaryMeasure;
-  top: 1.9rem;
+  margin-top: 2.3rem;
 }
 .apple {
   width: 4.6875rem;
@@ -391,11 +396,11 @@ img {
     margin-top: -0.6rem;
     margin-bottom: -$margin-or-padding;
     position: absolute;
-    top:  $margin-or-padding;
+    top: $margin-or-padding;
   }
 }
 .cart-footer {
-  background-color:$textColor;
+  background-color: $textColor;
   position: absolute;
   bottom: 0;
   height: 6.875rem;
@@ -409,7 +414,7 @@ img {
   button {
     border: None;
     color: $textColor;
-    background-color:$primaryColor;
+    background-color: $primaryColor;
     margin: 0 auto;
     width: 23.125rem;
     height: $fourth-measurement;

@@ -20,3 +20,16 @@ $sixth-measurement: 0.3125rem;
   margin-left: auto;
   margin-right: auto;
 }
+@mixin plus-minus {
+  width: $tertiary-measurement;
+  height: $tertiary-measurement;
+  border-radius: 50%;
+  background-color: $primaryColor;
+  position: relative;
+  display: inline-block;
+  margin-right: $tertiary-measurement;
+  margin-bottom: $margin-or-padding;
+  margin-top: -9rem;
+  border: none;
+  outline: none;
+}
