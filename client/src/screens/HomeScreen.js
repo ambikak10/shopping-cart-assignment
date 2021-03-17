@@ -1,6 +1,19 @@
 const HomeScreen = {
- 
+  after_render: () => {
+            $(document).ready(function () {
+              $(".carousel").slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                // infinite: true,
+                // cssEase: "linear",
+                arrow: true,
+              });
+            });
+  },
   render: async () => {
+     
+ 
 
      const resCategories = await fetch("http://localhost:5000/api/categories", {
        headers: {
@@ -25,22 +38,19 @@ const HomeScreen = {
        });
      }
     const banners = await resBanners.json();
-    console.log(banners)
     return `
       <div class='container container-slick'>
+       <div class="carousel">
       ${banners
         .map((item, index) => {
-          console.log(index);
           return `
-           <div class="carousel">
               <img
-                class='banner'
                 src=${item.bannerImageUrl}
                 alt=${item.bannerImageAlt}
-              />
-            </div>`;
+              />`;
         })
         .join("\n")}
+         </div>
           <div class='fancy-line'></div>
         
         ${
@@ -67,7 +77,6 @@ const HomeScreen = {
                   <div class='fancy-line'></div>
                 </div>`;
               } else {
-                console.log("categories");
                 return `
                 <div class='row'>
                   <div class='home-categories'>
