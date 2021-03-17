@@ -61,15 +61,15 @@ const HomeScreen = {
               if (index % 2 === 0) {
                 return `
                 <div class='row'>
-                  <div class='home-categories'>
-                    <img class='category-image' src=${item.imageUrl} />
+                  <div class='home-categories' aria-label="category section in home page">
+                    <img class='category-image' src='${item.imageUrl}'/>
                     <div style='text-align: center'>
                       <p>${item.name}</p>
                       <div style='word-wrap: break-word; width: 390px;font-size: 1.2rem'>
                         ${item.description}
                       </div>
 
-                   <button onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                   <button role="navigation to category products"onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
@@ -79,18 +79,18 @@ const HomeScreen = {
               } else {
                 return `
                 <div class='row'>
-                  <div class='home-categories'>
+                  <div class='home-categories'aria-label="category section in home page">
                     <div style='text-align:center'>
                       <p>${item.name}</p>
                       <div style='word-break: break-word; width: 380px; font-size: 1.2rem'>
                         ${item.description}
                       </div>
-                      <button onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                      <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
                     <img class='category-image'
-                      src=${item.imageUrl} alt="category image"
+                      src=${item.imageUrl}
                     />
                   </div>
                   <div class='fancy-line'></div>

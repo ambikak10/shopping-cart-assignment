@@ -123,6 +123,7 @@ input:focus {
 button.slick-arrow {
   background-color: rgb(117, 114, 114);
   border-radius: 55%;
+  ;
   // margin-right: 30px;
   // margin-left: 60px;
 }
@@ -222,14 +223,15 @@ p{
   box-shadow: $fifth-measurement 0.0625rem 0.6875rem 0px #f7f6f6;
 
   p {
-    padding-top: $secondary-measurement;
+    margin-top: 1rem;
     padding-bottom: $sixth-measurement;
     font-size:  $margin-or-padding;
     height: 3.75rem;
     margin-left: 1.5625rem;
+    margin-bottom: 4rem;
   }
 img {
-    height: 12.5rem;
+    height: 10.8rem;
     width: 13.125rem;
     display: block;
    @include marginAuto;

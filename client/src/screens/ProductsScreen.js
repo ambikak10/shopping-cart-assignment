@@ -32,7 +32,7 @@ const ProductsScreen = {
     return `
     <div class='container'>
       <div class='row'>
-        <div class='col-xxl-3 col-lg-3 col-md-3 productPage-categories'>
+        <div aria-label="category list in product page"class='col-xxl-3 col-lg-3 col-md-3 productPage-categories'>
           ${categories
             .map((item) => {
               return `
@@ -51,7 +51,7 @@ const ProductsScreen = {
                 return `
                 <div class='lg-3 products-page-card'>
                   <p>${item.name}</p>
-                  <img src=${item.imageURL} alt="products image"/>
+                  <img src=${item.imageURL} alt=${item.name}/>
                   <section>${item.description}</section>
                   <div>
                     <span>MRP Rs.${item.price}</span>
