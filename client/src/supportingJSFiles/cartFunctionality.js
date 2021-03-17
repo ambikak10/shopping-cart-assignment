@@ -15,7 +15,7 @@ function addToCart(product_id) {
   })
     .then((response) => response.json())
     .then((body) => {
-       document.getElementById("items").innerHTML = body.myItems + `   items`
+       document.getElementById("items").innerHTML = body.myItems + `   items` 
     });
  
 }

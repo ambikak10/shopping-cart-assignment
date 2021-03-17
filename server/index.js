@@ -11,13 +11,13 @@ const fs = require("fs");
 app.use(cors());
 
 //Body parser configuration
-app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 var arrayOfItems = [];
 /* Redirect all routes to our (soon to exist) "index.html" file */
 
- app.get("/", (req, res) => {
- res.sendFile(path.resolve("client", "index.html"));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve("client", "index.html"));
 });
 
 app.get("/api/banners", (req, res) => {
@@ -32,55 +32,37 @@ app.get("/api/products", (req, res) => {
   res.send(products);
 });
 
-app.get("/api/items", (req, res) => {
-  res.send(items)
-});
-
-// app.post("/api/cart/add"), (req, res) => {
-//   console.log("inside add")
-//   console.log(req.body)
-// }
-// app.post("/api/cart/add", (req, res) => {
-//   //  console.log(addToCart);
-//   console.log(req.body);
-//  addToCart.push(req.body);
-//  console.log(addToCart)
-  // fs.appendFile('./server/addToCart/index.post.json', req.body, (err, data) => {
-  //   if (err) {
-  //     throw err;
-  //   }
-    // res.send(JSON.parse(data.reponse));
-  // });
-
 app.post("/api/cart/add", (req, res) => {
-  console.log(req.body);
+  //console.log(req.body);
   arrayOfItems.push(req.body._id);
-  console.log(arrayOfItems);
+  //console.log(arrayOfItems);
   var x = arrayOfItems.length;
-  var obj = {myItems: x};
+  var obj = { myItems: x };
   res.send(JSON.stringify(obj));
-
 });
-app.get("/api/cart/numberOfItems", (req, res) => {
-  var numOfItems = arrayOfItems.length;
-  console.log(numOfItems)
-  res.send(numOfItems);
-})
+app.get("/api/cart/items", (req, res) => {
+console.log(arrayOfItems);
+  var items;
+  console.log("inside api cart items");
+  var filteredItems = products.filter(product => {
+    return arrayOfItems.indexOf(product.id) !== -1
+  })
+  console.log(filteredItems)
+  res.send(filteredItems);
+});
 
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
+// var json = JSON.parse(data);
+// json.push(req.body);
+//var json =  JSON.parse(addToCart[0]);
+// var json =
+// addToCart.push(req.body);
 
-  // var json = JSON.parse(data);
-  // json.push(req.body);
-  //var json =  JSON.parse(addToCart[0]);
-  // var json =
-  // addToCart.push(req.body);
-
-  // fs.writeFile("addToCart", JSON.stringify(json));
+// fs.writeFile("addToCart", JSON.stringify(json));
 // });
-
 
 // fs.readFile("server/addToCart/index.post.json", function (err, data) {
 //   if (err) {
@@ -93,3 +75,26 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 //   console.log(json)
 //   content.push(req.body);
 //   // fs.writeFile("server/addToCart/index.post.json", JSON.stringify(content));
+
+// app.post("/api/cart/add"), (req, res) => {
+//   console.log("inside add")
+//   console.log(req.body)
+// }
+// app.post("/api/cart/add", (req, res) => {
+//   //  console.log(addToCart);
+//   console.log(req.body);
+//  addToCart.push(req.body);
+//  console.log(addToCart)
+// fs.appendFile('./server/addToCart/index.post.json', req.body, (err, data) => {
+//   if (err) {
+//     throw err;
+//   }
+// res.send(JSON.parse(data.reponse));
+// });
+
+//  arrayOfItems.map(product_id => {
+//    //console.log(product_id)
+//    //console.log(products)
+//    items = products.filter(product=>{
+//      return product.id === product._product_id})
+//    console.log(items);
