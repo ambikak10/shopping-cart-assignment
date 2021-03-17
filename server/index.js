@@ -14,12 +14,11 @@ app.use(cors());
 // app.use(bodyparser.urlencoded({extended: false}));
 app.use(bodyparser.json());
 
-
 /* Redirect all routes to our (soon to exist) "index.html" file */
 
-// app.get("/", (req, res) => {
-//     res.sendFile(path.resolve("client", "index.html"));
-// });
+ app.get("/", (req, res) => {
+ res.sendFile(path.resolve("client", "index.html"));
+});
 
 app.get("/api/banners", (req, res) => {
   res.send(banners);
@@ -36,7 +35,6 @@ app.get("/api/products", (req, res) => {
 app.get("/api/items", (req, res) => {
   res.send(items)
 });
-
 // app.post("/api/cart/add", (req, res) => {
 //   //  console.log(addToCart);
 //   console.log(req.body);
