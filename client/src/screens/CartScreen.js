@@ -48,24 +48,25 @@ const CartScreen = {
               <p>${item.name}</p>
               <button class='decrement' onclick="return removeFromCart('${
                 item.id
-              }', ${item.price})">
+              }', ${item.price}, '${item.sku}')">
                   <span class="plusOrMinus">-</span>
                 </button>
                 <span class='qt' id=${item.id}>${map[item.id]}</span>
                 <button class='increment'onclick="return addToCart('${
                   item.id
-                }', ${item.price})">
+                }', ${item.price}, '${item.sku}')">
                   <span class="plusOrMinus">+</span>
                 </button>
                 <span class="price"> X&nbsp;&nbsp;&nbsp; Rs.<span class=" ${
-                  item.price
+                  item.sku
+                }
                 }">${item.price} 
                 </span><span>
               
             </div>
-            <span class='lg-2 rupees'>Rs. <span class="item-cost"id=${item.price}>${
-                item.price * map[item.id]
-              }</span></span>
+            <span class='lg-2 rupees'>Rs. <span class="item-cost"id=${
+              item.sku
+            }>${item.price * map[item.id]}</span></span>
           </div>`;
             })
             .join("\n")}
