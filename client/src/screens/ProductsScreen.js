@@ -43,6 +43,7 @@ const ProductsScreen = {
               </div>`}`
             })
             .join("\n")}
+
         </div>
         <div class='col-lg-9'>
           <div class='custom-row'>
@@ -55,7 +56,7 @@ const ProductsScreen = {
                   <section>${item.description}</section>
                   <div>
                     <span>MRP Rs.${item.price}</span>
-                    <button id="buy-now" onclick="return addToCart('${item.id}')">
+                    <button id="buy-now" onclick="return addToCart('${item.id}', null)">
                       Buy Now
                     </button>
                   </div>

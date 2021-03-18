@@ -32,7 +32,6 @@ const SignupScreen = {
       e.preventDefault();
       errorElement.innerText = messages.join(", ");
     }
-    console.log(messages);
   });
   },
   render: () => {

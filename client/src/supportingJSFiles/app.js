@@ -6,7 +6,6 @@ import SignupScreen from "../screens/SignupScreen.js";
 import CartScreen from "../screens/CartScreen.js";
 import {parseRequestUrl} from './utils.js';
 
-
 const routes = {
   "/": LoginScreen,
   "/home": HomeScreen,
@@ -17,16 +16,26 @@ const routes = {
   "/products/:id": ProductsScreen,
 };
 const router = async() => {
-  const request = parseRequestUrl();
+ const request = parseRequestUrl();
  const parseUrl =
    (request.resource ? `/${request.resource}` : "/") 
    +
    (request.id ? "/:id" : "") +
    (request.verb ? `/${request.verb}` : "");
-    const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+  const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
   const main = document.getElementById('middle');
   main.innerHTML = await screen.render();
   if (screen.after_render) screen.after_render();
+  if (screen.increment) screen.increment();
+
+}
+window.addEventListener("load", router);
+window.addEventListener("hashchange", router);
+
+
+
+
+
 
   // if(screen.slick) screen.slickcarousel();
 
@@ -41,11 +50,3 @@ const router = async() => {
     // console.log("cart items fetch");
     // const items = numberOfItemsInCart.length;
     // document.getElementById("item").innerText = items;
-}
-window.addEventListener("load", router);
-window.addEventListener("hashchange", router);
-
-
-
-
-

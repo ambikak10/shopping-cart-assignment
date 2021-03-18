@@ -14,6 +14,7 @@ app.use(cors());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 var arrayOfItems = [];
+var obj= {myItems: 0};
 /* Redirect all routes to our (soon to exist) "index.html" file */
 
 app.get("/", (req, res) => {
@@ -33,24 +34,38 @@ app.get("/api/products", (req, res) => {
 });
 
 app.post("/api/cart/add", (req, res) => {
-  //console.log(req.body);
   arrayOfItems.push(req.body._id);
-  //console.log(arrayOfItems);
   var x = arrayOfItems.length;
-  var obj = { myItems: x };
+    obj['myItems'] = x;
+  // var obj = { myItems: x};
+  let key = req.body._id;
+  if(obj[key]){
+    obj[key]++;
+  } else {
+    obj[key] = 1;
+  }
   res.send(JSON.stringify(obj));
 });
+app.post("/api/cart/remove", (req, res) => {
+  arrayOfItems.splice(arrayOfItems.indexOf(req.body._id), 1);
+   var x = arrayOfItems.length;
+   obj["myItems"] = x;
+   let key = req.body._id;
+   if (obj[key]) {
+     obj[key]--;
+   } 
+   res.send(JSON.stringify(obj));
+});
 app.get("/api/cart/items", (req, res) => {
-console.log(arrayOfItems);
-  var items;
-  console.log("inside api cart items");
   var filteredItems = products.filter(product => {
     return arrayOfItems.indexOf(product.id) !== -1
   })
-  console.log(filteredItems)
-  res.send(filteredItems);
+  res.send({allItems: arrayOfItems, filteredItems: filteredItems})
 });
-
+app.get("/api/cart/clear", (req, res) => { 
+  arrayOfItems = [];
+  obj = { myItems: 0 };
+})
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

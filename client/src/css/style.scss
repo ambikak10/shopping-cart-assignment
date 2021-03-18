@@ -430,6 +430,14 @@ button.slick-arrow {
       float: right;
       margin-right: $secondary-measurement;
     }
+    #cart-price {
+      position: absolute;
+      right: -11.875rem;
+    }
+    .rs {
+      position: absolute;
+      right: -8.875rem;
+    }
   }
 }
 #items {
