@@ -24,6 +24,10 @@
   },
   "homepage": "https://github.com/ambikak10/shopping-cart-assignment#readme",
   "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
     "nodemon": "^2.0.7"
   }
 }

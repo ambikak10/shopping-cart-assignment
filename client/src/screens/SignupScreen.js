@@ -44,7 +44,7 @@ const SignupScreen = {
             We do not share your personal details with anyone
           </div>
         </div>
-         <form id="signupForm" action="/client/#/home" onsubmit=''>
+         <form id="signupForm" action="/#/home" onsubmit=''>
         <div class='fields'>
           <label class='field'>First Name</label>
           <input type='text' aria-label="First name" size='30' aria-required="true"  required></input>

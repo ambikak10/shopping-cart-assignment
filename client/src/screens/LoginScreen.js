@@ -39,7 +39,7 @@ const LoginScreen = {
           Get access to your orders, Wishlist and Recommednations
         </div>
         </div>
-        <form id="loginForm" action="/client/#/home" onsubmit=''>
+        <form id="loginForm" action="/#/home" onsubmit=''>
     <div class='fields'>
       <label class='field' >Email</label>
       <input type='email' size='30' aria-required="true" required>

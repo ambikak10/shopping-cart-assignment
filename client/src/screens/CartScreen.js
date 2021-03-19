@@ -123,7 +123,7 @@ const CartScreen = {
             </section>
 
             <div class='cart-footer' style=" border-top: transparent">
-              <button onclick="window.location.href='/client/#/products'"  style='margin-top:40px'type='submit'>
+              <button onclick="window.location.href='/#/products'"  style='margin-top:40px'type='submit'>
                 Start Shopping        
               </button>
             </div>

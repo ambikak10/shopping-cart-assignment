@@ -66,6 +66,8 @@ app.get("/api/cart/clear", (req, res) => {
   arrayOfItems = [];
   obj = { myItems: 0 };
 })
+
+app.use("/static/images", express.static(path.resolve(__dirname + "/static/images")));
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

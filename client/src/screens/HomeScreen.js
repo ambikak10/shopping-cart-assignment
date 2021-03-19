@@ -62,11 +62,11 @@ const HomeScreen = {
                     <img class='category-image' src='${item.imageUrl}'/>
                     <div style='text-align: center'>
                       <p id="homepage-itemname">${item.name}</p>
-                      <div style='word-wrap: break-word; width: 390px;font-size: 1.2rem'>
+                      <div style='word-wrap: break-word; width: 390px;font-size: 1.1rem'>
                         ${item.description}
                       </div>
 
-                   <button role="navigation to category products"onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                   <button role="navigation to category products"onclick="window.location.href='/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
@@ -79,10 +79,10 @@ const HomeScreen = {
                   <div class='home-categories'aria-label="category section in home page">
                     <div style='text-align:center'>
                       <p id="homepage-itemname">${item.name}</p>
-                      <div style='word-break: break-word; width: 380px; font-size: 1.2rem'>
+                      <div style='word-break: break-word; width: 380px; font-size: 1.1rem'>
                         ${item.description}
                       </div>
-                      <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                      <button role="navigation to category products" onclick="window.location.href='/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
