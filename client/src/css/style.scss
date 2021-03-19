@@ -4,6 +4,9 @@
   font-family: "Dosis";
   box-sizing: border-box;
 }
+button:focus {
+  box-shadow: 0 0.0625rem 0.5rem rgb(124, 123, 123);
+}
 .navbar {
   height: $widthHeight;
   width: 100%;
@@ -234,14 +237,17 @@ button.slick-arrow {
     margin-top: $fourth-measurement;
   }
   section {
-    height: $widthHeight;
+    height:8rem;
     width: 13.125rem;
     display: block;
     @include marginAuto;
     background-color: rgb(231, 230, 230);
-    margin-top: $margin-or-padding;
+    // margin-top: $margin-or-padding;
     overflow: hidden;
-    padding-left: $sixth-measurement;
+    padding-left: 0.7rem;
+    padding-top:0.2rem;
+    padding-right: 0.7rem;
+    padding-bottom: 0.5rem;
     font-weight: 400;
   }
   div {
@@ -261,11 +267,11 @@ button.slick-arrow {
     width: $widthHeight;
   }
 }
-.center {
-  @include displayFlex;
-  justify-content: center;
-  flex-direction: row;
-}
+// .center {
+//   @include displayFlex;
+//   justify-content: center;
+//   flex-direction: row;
+// }
 .cartcard {
   justify-content: center;
   @include displayFlex;
@@ -285,6 +291,17 @@ button.slick-arrow {
   background-color: $textColor;
   position: relative;
 }
+.modal-view {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 .cart-flex-nav {
   height: 3.4375rem;
@@ -300,7 +317,7 @@ button.slick-arrow {
     padding-left: 0.375rem;
     font-size: $tertiary-measurement;
   }
-  .close-x {
+  #close-x {
     float: right;
     color: $textColor;
     background: transparent;

@@ -66,7 +66,7 @@ const HomeScreen = {
                         ${item.description}
                       </div>
 
-                   <button role="navigation to category products"onclick="window.location.href='/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                   <button role="navigation to category products"onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
@@ -82,7 +82,7 @@ const HomeScreen = {
                       <div style='word-break: break-word; width: 380px; font-size: 1.1rem'>
                         ${item.description}
                       </div>
-                      <button role="navigation to category products" onclick="window.location.href='/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                      <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>

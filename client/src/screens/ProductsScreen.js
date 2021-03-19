@@ -37,9 +37,9 @@ const ProductsScreen = {
             .map((item) => {
               return `
              ${item.id === _id ?  `<div id="highlight">
-                <a href='/#/products/${item.id}'>${item.name}</a>
+                <a href='/client/#/products/${item.id}'>${item.name}</a>
               </div>`: `<div>
-                <a href='/#/products/${item.id}'>${item.name}</a>
+                <a href='/client/#/products/${item.id}'>${item.name}</a>
               </div>`}`
             })
             .join("\n")}

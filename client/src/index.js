@@ -26,7 +26,6 @@ const router = async() => {
   const main = document.getElementById('middle');
   main.innerHTML = await screen.render();
   if (screen.after_render) screen.after_render();
-  if (screen.increment) screen.increment();
 
 }
 window.addEventListener("load", router);

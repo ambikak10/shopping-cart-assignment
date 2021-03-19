@@ -14,9 +14,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabka Bazaar</title>
-  <script type="text/javascript" src="./src/supportingJSFiles/cartFunctionality.js"></script>
 
-  <!-- <script type="module" src="./src/index.js"></script> -->
+
+  <script type="module" src="./src/index.js"></script>
+  <script type="module" src="./src/index.js"></script>
 
 </head>
 
@@ -26,35 +27,42 @@
       <section>
         <ul role="navigation">
           <li>
-            <a href="/"><img src="./assets/logo.png" alt='sabka-bazar site logo' /></a>
+            <a href="/client"><img src="./assets/logo.png" alt='sabka-bazar site logo' /></a>
           </li>
           <li class='home-products'>
-            <a href='/#/home'>Home</a>
+            <a href='/client/#/home'>Home</a>
           </li>
           <li class='home-products'>
-            <a href='/#/products'>Products</a>
+            <a href='/client/#/products'>Products</a>
           </li>
         </ul>
         <ul class='signup-login' role="navigation">
           <li>
-            <a href='/#/Signup'>Sign Up</a>
+            <a href='/client/#/Signup'>Sign Up</a>
           </li>
           <li>
-            <a href='/#/login'>Login</a>
+            <a href='/client/#/login'>Login</a>
           </li>
           <li>
-            <a href='/#/cart'>
-              <button style="background-color: gainsboro; outline: none; border: none; color: gray">
+            <!-- <a href='/client/#/cart'> -->
+              <button id="modal-btn" class="buttons"
+              style="background-color: gainsboro; outline: none; border: none; color: gray" on>
                 <img class='cart-nav' src="./assets/cart.svg" alt='cart-logo' /><span id="items">0 items</span>
               </button>
-            </a>
+            <!-- </a> -->
           </li>
         </ul>
       </section>
     </nav>
   </div>
 
-  <main id="middle"></main>
+  <main id="middle">
+  </main>
+      <div class="center modal-view" id="simpleModal">
+        <div class='cartcard'>
+   
+        </div>
+      </div>
 
   <div class='footer'>
     Copyright &#169; 2011-2021 Sabka Bazaar Grocery Supplies Pvt Ltd
@@ -62,9 +70,11 @@
   <!-- slick scripts -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="./src/supportingJSFiles/cartFunctionality.js"></script>
+  
 
-  <!-- end -->
-  <script src="./dist/main.js"></script>
+  <!-- end
+  <script src="./dist/main.js"></script> -->
 </body>
 
 </html>
