@@ -2,13 +2,14 @@ const SignupScreen = {
   after_render: () => {
   const password1 = document.getElementById("password1");
   const password2 = document.getElementById("password2");
+  const email = document.getElementById("signup-email");
   const form = document.getElementById("signupForm");
   const errorElement = document.getElementById("error");
   var numbers = /[0-9]/g;
   var alphabets = /[a-zA-Z]/g;
   form.addEventListener("submit", (e) => {
     var messages = [];
-
+  
     if (password1.value.length < 6) {
       messages.push("Password must be atleast 6 characters");
     }
@@ -31,8 +32,28 @@ const SignupScreen = {
     if (messages.length > 0) {
       e.preventDefault();
       errorElement.innerText = messages.join(", ");
-    }
-  });
+    } else {
+         e.preventDefault();
+      fetch("http://localhost:5000/api/signup", {
+        method: "POST",
+
+        // Adding body or contents to send
+        body: JSON.stringify({
+          email: email.value,
+          password: password1.value,
+        }),
+        // Adding headers to the request
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((body) => {
+          console.log(window.isValidUser);
+           window.isValidUser = true;
+           window.location.href = "/client/#/home";
+        });
+  }});
   },
   render: () => {
     return `
@@ -47,16 +68,16 @@ const SignupScreen = {
          <form id="signupForm" action="/client/#/home" onsubmit=''>
         <div class='fields'>
           <label class='field'>First Name</label>
-          <input type='text' aria-label="First name" size='40' aria-required="true"  required></input>
+          <input type='text' aria-label="First name" size='40' aria-required="true"  required>
           <label class='field'> Last name</label>
-          <input type='text' size='40'aria-required="true"  aria-label="Last name" required></input>
+          <input type='text' size='40'aria-required="true"  aria-label="Last name" required>
 
           <label class='field'>Email</label>
-          <input type='email' aria-required="true" size='40' required></input>
+          <input type='email' aria-required="true" id="signup-email" size='40' required>
           <label class='field' >Password</label>
-          <input type='password' id="password1" size='40'aria-required="true"></input>
+          <input  id="password1"aria-required="true" size='40'required>
           <label class='field'>Confirm Password</label>
-          <input type='password' id="password2" size='40'aria-required="true" aria-label="Confirm password"required></input>
+          <input type='text' id="password2" size='40'aria-required="true" aria-label="Confirm password"required>
           <input 
             class='authButton'
             type='submit'

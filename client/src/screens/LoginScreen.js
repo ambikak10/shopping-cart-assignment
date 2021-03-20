@@ -2,6 +2,7 @@ const LoginScreen = {
   after_render: () => {
     const password = document.getElementById("password");
     const form = document.getElementById("loginForm");
+      const email = document.getElementById("login-email");
     const errorElement = document.getElementById("error");
     var numbers = /[0-9]/g;
     var alphabets = /[a-zA-Z]/g;
@@ -25,8 +26,33 @@ const LoginScreen = {
       if (messages.length > 0) {
         e.preventDefault();
         errorElement.innerText = messages.join(", ");
+      } else  {
+        e.preventDefault();
+        
+        fetch("http://localhost:5000/api/login", {
+          method: "POST",
+
+          // Adding body or contents to send
+          body: JSON.stringify({
+            email: email.value,
+            password: password.value,
+          }),
+
+          // Adding headers to the request
+          headers: {
+            "Content-type": "application/json",
+          },
+        }).then((response) => response.json()).then((body) =>{
+          console.log(body)
+          if(body.err) { 
+            alert(body.err);
+          } else if(body.isAuthenticated) {
+            window.isValidUser = body.isAuthenticated;
+            window.location.href='/client/#/home'
+          }
+
+        });
       }
-      console.log(messages);
     });
 
   },
@@ -39,12 +65,12 @@ const LoginScreen = {
           Get access to your orders, Wishlist and Recommednations
         </div>
         </div>
-        <form id="loginForm" action="/client/#/home" onsubmit=''>
+        <form id="loginForm">
     <div class='fields'>
       <label class='field' >Email</label>
-      <input type='email' size='40' aria-required="true" required>
+      <input id="login-email"type='email' size='40' aria-required="true" required>
       <label class='field'> Password</label>
-      <input type='password' aria-required="true" size='40'id="password"
+      <input  aria-required="true" size='40'id="password"
       required>
       <button class='authButton' aria-label="Login form submission" type='submit'  value='Log In'>Log In</button />
     </div>

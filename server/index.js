@@ -15,11 +15,38 @@ app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
 var arrayOfItems = [];
 var obj= {myItems: 0};
+var auth = [];
 /* Redirect all routes to our (soon to exist) "index.html" file */
 
 app.get("/", (req, res) => {
   res.sendFile(path.resolve("client", "index.html"));
 });
+
+app.post("/api/signup", (req, res) => {
+  auth.push(req.body);
+  console.log(auth)
+  res.send(JSON.stringify({success: "Signup successful"}))
+});
+app.post("/api/login", (req, res) => {
+  console.log(req.body);
+  for(var i = 0; i < auth.length; i++){
+    console.log("inside for loop")
+    if(auth[i].email == req.body.email){
+      console.log("email verified")
+      if(auth[i].password == req.body.password){
+        console.log("password verified")
+      res.send(JSON.stringify({isAuthenticated : true}))
+      } else {
+        console.log("email not verified");
+        res.send(JSON.stringify({ err: "Password is incorrect" }));
+      }
+  } else {
+    console.log("email not verified")
+    res.send(JSON.stringify({err: "Email already exists"}))
+  }
+}
+});
+
 
 app.get("/api/banners", (req, res) => {
   res.send(banners);
@@ -115,3 +142,14 @@ app.listen(port, () => console.log(`Server running on port ${port}`));
 //    items = products.filter(product=>{
 //      return product.id === product._product_id})
 //    console.log(items);
+
+
+
+//  if (auth[i].password == req.body.password) {
+//    console.log("password verified");
+//    auth[i].isAuthenticated = true;
+//    console.log(auth);
+//    res.send(auth[i].isAuthenticated);
+//  } else {
+//    res.send({ err: "You are not authenticated, please signup" });
+//  }

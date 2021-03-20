@@ -11,8 +11,7 @@ function addToCart(product_id, price, sku) {
     headers: {
       "Content-type": "application/json",
     },
-  })
-    .then((response) => response.json())
+  }).then((response) => response.json())
     .then((body) => {
       document.getElementById("items").innerHTML = body.myItems + `   items`;
       document.getElementById(
@@ -85,6 +84,7 @@ modalBtn.addEventListener('click',  openModal);
 
 
 async function openModal(){
+  if(window.isValidUser){
   modal.style.display = "block";
   const content =  document.getElementsByClassName('cartcard')[0];
  const res = await fetch("http://localhost:5000/api/cart/items", {
@@ -213,6 +213,9 @@ async function openModal(){
             </div>
           </div>`
      }
+    } else {
+      window.location.href="/client"
+    }
    }
 
 async function closeModal(){
