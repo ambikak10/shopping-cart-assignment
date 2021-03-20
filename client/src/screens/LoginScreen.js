@@ -33,7 +33,7 @@ const LoginScreen = {
      render: () => {
  return `
     <div class='login'>
-        <div style="color: black;  font-size: 1.4rem;  font-weight: bold">
+        <div tabindex='0' style="color: black;  font-size: 1.4rem;  font-weight: bold">
           Login
         <div style="color: grey; font-size: 1.1rem; font-weight: bold">
           Get access to your orders, Wishlist and Recommednations
@@ -42,9 +42,9 @@ const LoginScreen = {
         <form id="loginForm" action="/client/#/home" onsubmit=''>
     <div class='fields'>
       <label class='field' >Email</label>
-      <input type='email' size='30' aria-required="true" required>
+      <input type='email' size='40' aria-required="true" required>
       <label class='field'> Password</label>
-      <input type='password' aria-required="true" size='30'id="password"
+      <input type='password' aria-required="true" size='40'id="password"
       required>
       <button class='authButton' aria-label="Login form submission" type='submit'  value='Log In'>Log In</button />
     </div>

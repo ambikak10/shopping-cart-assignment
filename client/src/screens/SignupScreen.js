@@ -38,7 +38,7 @@ const SignupScreen = {
     return `
       <div class='container'>
       <div class='login'>
-        <div style="color: black; font-size: 1.4rem; font-weight: bold">
+        <div tabindex='0'style="color: black; font-size: 1.4rem; font-weight: bold">
           Signup
            <div style="color: grey; font-size: 1.1rem; font-weight: bold">
             We do not share your personal details with anyone
@@ -47,27 +47,27 @@ const SignupScreen = {
          <form id="signupForm" action="/client/#/home" onsubmit=''>
         <div class='fields'>
           <label class='field'>First Name</label>
-          <input type='text' aria-label="First name" size='30' aria-required="true"  required></input>
+          <input type='text' aria-label="First name" size='40' aria-required="true"  required></input>
           <label class='field'> Last name</label>
-          <input type='text' size='30'aria-required="true"  aria-label="Last name" required></input>
+          <input type='text' size='40'aria-required="true"  aria-label="Last name" required></input>
 
           <label class='field'>Email</label>
-          <input type='email' aria-required="true"  size='30' required></input>
-          <label class='field'>Password</label>
-          <input type='password' id="password1" size='30'aria-required="true"  required></input>
+          <input type='email' aria-required="true" size='40' required></input>
+          <label class='field' >Password</label>
+          <input type='password' id="password1" size='40'aria-required="true"></input>
           <label class='field'>Confirm Password</label>
-          <input type='password' id="password2"  size='30'aria-required="true" aria-label="Confirm password"required></input>
-          <input
+          <input type='password' id="password2" size='40'aria-required="true" aria-label="Confirm password"required></input>
+          <input 
             class='authButton'
             type='submit'
-            size='30'
+            size='40'
             value='Signup'
             aria-label="signup form submission"
           />
         </div>   
         </form>
       </div>
-        <div tabindex="0"aria-live="assertive" role="alert" id="error"></div>
+        <div aria-live="assertive" role="alert" id="error"></div>
     </div>
     `;
   },

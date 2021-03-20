@@ -117,24 +117,45 @@ input:focus {
   height: 15rem;
   margin: 0 auto;
 }
+
 // .slick-slide img {
 //   margin: auto;
 // }
-button.slick-arrow {
-  background-color: rgb(117, 114, 114);
-  border-radius: 55%;
-  // margin-right: 30px;
-  // margin-left: 60px;
-}
-// .slick-prev:hover,
-// .slick-next:hover {
-//   color: rgb(117, 114, 114);
-//   opacity: 1;
-//   border:gray;
-//   outline:gray;
-//   background-color: gray;
 
-// }
+button.slick-prev{
+  background-color: rgb(206, 205, 205);
+  height: 2rem;
+  width:3rem;
+  z-index: 1;
+  font-family: inherit;
+  padding-bottom: 0.195rem;
+}
+.slick-prev:before {
+   content: 'PREV' !important;
+   font-size: 0.9rem  !important;
+   text-align: center !important;
+   font-family: "Dosis" !important;
+}
+.slick-next:before {
+   content: 'NEXT' !important;
+   font-size: 0.9rem  !important;
+   text-align: center !important;
+   font-family: "Dosis" !important;
+}
+button.slick-next{
+  background-color: rgb(206, 205, 205);
+  height: 2rem;
+  width:3rem;
+  right: -20px;
+}
+button.slick-prev:focus,
+button.slick-next:focus {
+  // color: rgb(190, 185, 185);
+  // opacity: 1;
+  // border:gray;
+  // outline:gray;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
 .fancy-line {
   border: 0rem;
@@ -214,7 +235,10 @@ button.slick-arrow {
   width: 100%;
   // margin-left: -12px;
 }
-
+.my-container{
+  width: 88.5rem;
+  padding-left: 10.5rem;
+}
 .products-page-card {
   height: 33.125rem;
   width: 100%;

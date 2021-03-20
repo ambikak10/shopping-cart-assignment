@@ -3,7 +3,6 @@ import LoginScreen from "./screens/LoginScreen.js";
 import ProductsScreen from "./screens/ProductsScreen.js";
 import Error404Screen from "./screens/Error404Screen.js";
 import SignupScreen from "./screens/SignupScreen.js";
-import CartScreen from "./screens/CartScreen.js";
 import {parseRequestUrl} from './supportingJSFiles/utils.js';
 
 const routes = {
@@ -11,7 +10,6 @@ const routes = {
   "/home": HomeScreen,
   "/products": ProductsScreen,
   "/signup": SignupScreen,
-  "/cart": CartScreen,
   "/login": LoginScreen,
   "/products/:id": ProductsScreen,
 };

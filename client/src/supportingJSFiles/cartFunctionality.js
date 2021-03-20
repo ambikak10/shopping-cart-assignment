@@ -112,7 +112,7 @@ async function openModal(){
       }
     }
     if (totalItems !== 0) {
-      content.innerHTML = ` <div class='flex-box'>
+      content.innerHTML = ` <div tabindex='0' aria-hidden="false"aria-label="open cart items"class='flex-box'>
           <div class='cart-flex-nav'>
             <p>
               My Cart <span id="nav-total">( ${totalItems}  items )</span>
@@ -176,8 +176,8 @@ async function openModal(){
     </div>`;
     } else {
       content.innerHTML = `
-           <div class='center'>
-      <div class='cartcard'>
+           <div class='center'tabindex='0' aria-label="open cart items">
+    
         <div class='flex-box-empty'>
           <div class='cart-flex-nav'>
             <p>
@@ -211,8 +211,7 @@ async function openModal(){
                 Start Shopping        
               </button>
             </div>
-          </div>
-        </div>`
+          </div>`
      }
    }
 

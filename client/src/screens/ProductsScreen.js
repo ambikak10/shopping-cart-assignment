@@ -30,9 +30,9 @@ const ProductsScreen = {
     }
 
     return `
-    <div class='container'>
+    <div class='my-container'>
       <div class='row'>
-        <div aria-label="category list in product page"class='col-xxl-3 col-lg-3 col-md-3 productPage-categories'>
+        <div tabindex='0' role="navigation" aria-label="category list in product page"class='col-xxl-3 col-lg-3 col-md-3 productPage-categories'>
           ${categories
             .map((item) => {
               return `
@@ -50,12 +50,12 @@ const ProductsScreen = {
             ${products
               .map((item) => {
                 return `
-                <div class='lg-3 products-page-card'>
-                  <p>${item.name}</p>
-                  <img src=${item.imageURL} alt=${item.name}/>
-                  <section>${item.description}</section>
+                <div class='lg-3 products-page-card' aria-label="product-details" tabindex='0'>
+                  <p  tabindex='0'>${item.name}</p>
+                  <img src=${item.imageURL}  tabindex='0' alt=${item.name}/>
+                  <section  tabindex='0'>${item.description}</section>
                   <div>
-                    <span>MRP Rs.${item.price}</span>
+                    <span  tabindex='0'>MRP Rs.${item.price}</span>
                     <button id="buy-now" onclick="return addToCart('${item.id}', null, null)">
                       Buy Now
                     </button>

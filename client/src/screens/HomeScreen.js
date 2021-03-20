@@ -7,7 +7,8 @@ const HomeScreen = {
                 dots: true,
                 // infinite: true,
                 // cssEase: "linear",
-                arrow: true,
+                arrows: true,
+                
               });
             });
   },
@@ -57,12 +58,12 @@ const HomeScreen = {
             .map((item, index) => {
               if (index % 2 === 0) {
                 return `
-                <div class='row'>
-                  <div class='home-categories' aria-label="category section in home page">
-                    <img class='category-image' src='${item.imageUrl}'/>
+                <div tabindex ='0'class='row' aria-label="category section in home page">
+                  <div class='home-categories'>
+                    <img tabindex ='0'class='category-image' src='${item.imageUrl}'/>
                     <div style='text-align: center'>
-                      <p id="homepage-itemname">${item.name}</p>
-                      <div style='word-wrap: break-word; width: 390px;font-size: 1.1rem'>
+                      <h1 tabindex ='0'id="homepage-itemname">${item.name}</h1>
+                      <div tabindex ='0'style='word-wrap: break-word; width: 390px;font-size: 1.1rem'>
                         ${item.description}
                       </div>
 
@@ -75,18 +76,18 @@ const HomeScreen = {
                 </div>`;
               } else {
                 return `
-                <div class='row'>
+                <div class='row'tabindex ='0'>
                   <div class='home-categories'aria-label="category section in home page">
                     <div style='text-align:center'>
-                      <p id="homepage-itemname">${item.name}</p>
-                      <div style='word-break: break-word; width: 380px; font-size: 1.1rem'>
+                      <h1 tabindex ='0'id="homepage-itemname">${item.name}</h1>
+                      <div tabindex ='0'style='word-break: break-word; width: 380px; font-size: 1.1rem'>
                         ${item.description}
                       </div>
                       <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
-                    <img class='category-image'
+                    <img tabindex ='0'class='category-image'
                       src=${item.imageUrl}
                     />
                   </div>
