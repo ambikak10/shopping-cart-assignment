@@ -1,5 +1,7 @@
 @import "config";
 // 1rem=16px
+
+/****General****/
 * {
   font-family: "Dosis";
   box-sizing: border-box;
@@ -7,6 +9,8 @@
 button:focus {
   box-shadow: 0 0.0625rem 0.5rem rgb(124, 123, 123);
 }
+
+/****Navbar****/
 .navbar {
   height: $widthHeight;
   width: 100%;
@@ -55,6 +59,7 @@ a {
   height: $fourth-measurement;
   width: 2.5rem;
 }
+/****Footer****/
 .footer {
   width: 100%;
   @include displayFlex;
@@ -62,11 +67,23 @@ a {
   height: $secondary-measurement;
   background-color: rgb(209, 209, 209);
 }
+
+/****Login page****/
 .login {
   @include displayFlex;
   justify-content: space-evenly;
   margin-bottom: $margin-or-padding;
 }
+.login>div{
+    color: black; 
+    font-size: 1.4rem; 
+    font-weight: bold
+  }
+  .login>div>div{
+    color: gray; 
+    font-size: 1.1rem; 
+    font-weight: bold
+  }
 input {
   background-color: transparent;
   color: black;
@@ -87,16 +104,16 @@ input {
   width: 9.375rem;
   display: block;
 }
-.fields {
-  margin-left: -8.125rem;
+.fields  {
+ margin-left: -8.125rem;
 }
 input:focus {
   border-bottom-color: rgb(9, 165, 238);
 }
 .authButton {
   display: block;
-  width: 15.5rem;
-  height: $secondary-measurement;
+  width: 20.5rem;
+  height: 2.5rem;
   margin-top: 2.5rem;
   border: None;
   color: $textColor;
@@ -108,7 +125,7 @@ input:focus {
   text-align: center;
   padding-bottom: $margin-or-padding;
 }
-/* carousel */
+/****Home page carousel ****/
 .container-slick {
   padding: $primaryMeasure;
 }
@@ -118,42 +135,34 @@ input:focus {
   margin: 0 auto;
 }
 
-// .slick-slide img {
-//   margin: auto;
-// }
-
-button.slick-prev{
+button.slick-prev {
   background-color: rgb(206, 205, 205);
   height: 2rem;
-  width:3rem;
+  width: 3rem;
   z-index: 1;
   font-family: inherit;
   padding-bottom: 0.195rem;
 }
 .slick-prev:before {
-   content: 'PREV' !important;
-   font-size: 0.9rem  !important;
-   text-align: center !important;
-   font-family: "Dosis" !important;
+  content: "PREV" !important;
+  font-size: 0.9rem !important;
+  text-align: center !important;
+  font-family: "Dosis" !important;
 }
 .slick-next:before {
-   content: 'NEXT' !important;
-   font-size: 0.9rem  !important;
-   text-align: center !important;
-   font-family: "Dosis" !important;
+  content: "NEXT" !important;
+  font-size: 0.9rem !important;
+  text-align: center !important;
+  font-family: "Dosis" !important;
 }
-button.slick-next{
+button.slick-next {
   background-color: rgb(206, 205, 205);
   height: 2rem;
-  width:3rem;
+  width: 3rem;
   right: -20px;
 }
 button.slick-prev:focus,
 button.slick-next:focus {
-  // color: rgb(190, 185, 185);
-  // opacity: 1;
-  // border:gray;
-  // outline:gray;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -171,7 +180,7 @@ button.slick-next:focus {
 }
 .fancy-line:after {
   height: 0.9em;
-  top: calc(-0.5em + -0.9375rem); /* adjusted this */
+  top: calc(-0.5em + -0.9375rem);
 }
 .fancy-line:before,
 .fancy-line:after {
@@ -187,28 +196,36 @@ button.slick-next:focus {
     rgba(0, 0, 0, 0) 100%
   );
 }
+/****Home page categories****/
 .home-categories {
   @include displayFlex;
   justify-content: space-evenly;
   margin-bottom: 2.5rem;
   min-width: 0;
 }
-
+#details-section {
+  text-align: center;
+  div {
+    word-wrap: break-word;
+    width: 390px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  h1 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+  button {
+    @extend .authButton;
+    height: 2.5rem;
+    color: $textColor;
+  }
+}
 .category-image {
   width: 18.75rem;
   height: 12.5rem;
 }
-.name-fontsize {
-  font-size: large;
-}
-#homepage-itemname {
-  font-size: calc(1.3rem + 0.6vw);
-}
-.homeCategoriesButton {
-  @extend .authButton;
-  height: 2.5rem;
-  color: $textColor;
-}
+
+/****Product page side categories listing****/
 .productPage-categories {
   background-color: rgb(231, 230, 230);
   min-height: 100vh;
@@ -235,7 +252,7 @@ button.slick-next:focus {
   width: 100%;
   // margin-left: -12px;
 }
-.my-container{
+.my-container {
   width: 88.5rem;
   padding-left: 10.5rem;
 }
@@ -261,7 +278,7 @@ button.slick-next:focus {
     margin-top: $fourth-measurement;
   }
   section {
-    height:8rem;
+    height: 8rem;
     width: 13.125rem;
     display: block;
     @include marginAuto;
@@ -269,7 +286,7 @@ button.slick-next:focus {
     // margin-top: $margin-or-padding;
     overflow: hidden;
     padding-left: 0.7rem;
-    padding-top:0.2rem;
+    padding-top: 0.2rem;
     padding-right: 0.7rem;
     padding-bottom: 0.5rem;
     font-weight: 400;
@@ -376,13 +393,13 @@ button.slick-next:focus {
   }
 }
 
- .decrement{
-   @include plus-minus;
-   margin-right: 2rem;
- }
+.decrement {
+  @include plus-minus;
+  margin-right: 2rem;
+}
 
 .increment {
- @include plus-minus;
+  @include plus-minus;
 }
 .plusOrMinus {
   position: absolute;
@@ -391,7 +408,6 @@ button.slick-next:focus {
   top: -0.45rem;
   color: $textColor;
   width: 0.1rem;
-
 }
 .qt {
   position: relative;
@@ -401,7 +417,6 @@ button.slick-next:focus {
   // margin-top: -$primaryMeasure;
   // margin-left: -0.5rem;
   // margin-right: -0.5rem;
-
 }
 .price {
   @extend .qt;
@@ -484,7 +499,7 @@ button.slick-next:focus {
 #items {
   color: black;
 }
-/***********custom row and grid*********/
+/****grid****/
 @media (min-width: 700px) {
   .lg-1,
   .lg-2,
@@ -546,4 +561,77 @@ button.slick-next:focus {
   .lg-12 {
     width: 100%;
   }
+}
+
+/****Mobile device responsiveness****/
+@media (max-width: 699px) {
+  /****navbar****/
+  .navbar {
+    position: relative;
+  }
+  a > img {
+    width: 4.875rem;
+    height: 2.75rem;
+    margin-left: -45px;
+  }
+  .signup-login {
+    float: right;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+  }
+  .home-products {
+    position: absolute;
+    font-size: 0.8rem;
+    left: 50px;
+    padding: 1px;
+  }
+  /****Home page****/
+  .carousel {
+    width: 19rem;
+    height: 7.5rem;
+    img {
+      height: 7rem;
+      width: 15rem;
+    }
+  }
+  .home-categories {
+    width: 18rem;
+    height: 11rem;
+    img {
+      height: 5rem;
+      width: 8rem;
+      margin-left: -1rem;
+    }
+    #details-section h1 {
+      font-size: 1.25rem;
+      margin-left: auto;
+      margin-right: auto;
+      word-wrap: break-word;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    #details-section > div {
+      word-wrap: break-word;
+      width: 210px;
+      font-size: 0.9rem;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    #details-section > button {
+      width: 8rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      height: 2.5rem;
+    }
+  }
+  /****Login page****/
+  .fields{
+    margin-left: 0.6rem;
+  }
+  /****Footer****/
+  .footer{
+    font-size: 0.7rem;
+  }
+  /****Product page****/
 }

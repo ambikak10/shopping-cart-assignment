@@ -48,6 +48,7 @@ const LoginScreen = {
             alert(body.err);
           } else if(body.isAuthenticated) {
             window.isValidUser = body.isAuthenticated;
+            console.log(isValidUser)
             window.location.href='/client/#/home'
           }
 
@@ -59,9 +60,9 @@ const LoginScreen = {
      render: () => {
  return `
     <div class='login'>
-        <div tabindex='0' style="color: black;  font-size: 1.4rem;  font-weight: bold">
+        <div class="d-none d-sm-block d-sm-none d-md-block" tabindex='0'>
           Login
-        <div style="color: grey; font-size: 1.1rem; font-weight: bold">
+        <div>
           Get access to your orders, Wishlist and Recommednations
         </div>
         </div>
@@ -72,7 +73,7 @@ const LoginScreen = {
       <label class='field'> Password</label>
       <input  aria-required="true" size='40'id="password"
       required>
-      <button class='authButton' aria-label="Login form submission" type='submit'  value='Log In'>Log In</button />
+      <button class='authButton' aria-label="Login form submission" size='40'type='submit'  value='Log In'>Log In</button />
     </div>
    
     </form>

@@ -22,11 +22,19 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve("client", "index.html"));
 });
 
+// @route   POST api/signup
+// @desc    Signup a user
+
 app.post("/api/signup", (req, res) => {
   auth.push(req.body);
   console.log(auth)
   res.send(JSON.stringify({success: "Signup successful"}))
 });
+
+
+// @route   POST api/login
+// @desc    Login a user
+
 app.post("/api/login", (req, res) => {
   console.log(req.body);
   for(var i = 0; i < auth.length; i++){
@@ -47,24 +55,32 @@ app.post("/api/login", (req, res) => {
 }
 });
 
-
+// @route   GET api/banners
+// @desc    Get carousel banners
 app.get("/api/banners", (req, res) => {
   res.send(banners);
 });
 
+// @route   GET api/categories
+// @desc    Get categories
 app.get("/api/categories", (req, res) => {
   res.send(categories);
 });
 
+
+// @route   GET api/products
+// @desc    Get all the products
 app.get("/api/products", (req, res) => {
   res.send(products);
 });
+
+// @route   POST api/cart/add
+// @desc    Add products to the cart
 
 app.post("/api/cart/add", (req, res) => {
   arrayOfItems.push(req.body._id);
   var x = arrayOfItems.length;
     obj['myItems'] = x;
-  // var obj = { myItems: x};
   let key = req.body._id;
   if(obj[key]){
     obj[key]++;
@@ -73,6 +89,10 @@ app.post("/api/cart/add", (req, res) => {
   }
   res.send(JSON.stringify(obj));
 });
+
+// @route   POST api/cart/remove
+// @desc    Remove products from the cart
+
 app.post("/api/cart/remove", (req, res) => {
   arrayOfItems.splice(arrayOfItems.indexOf(req.body._id), 1);
    var x = arrayOfItems.length;
@@ -83,73 +103,26 @@ app.post("/api/cart/remove", (req, res) => {
    } 
    res.send(JSON.stringify(obj));
 });
+
+// @route   GET api/cart/items
+// @desc    get all items in the cart
+
 app.get("/api/cart/items", (req, res) => {
   var filteredItems = products.filter(product => {
     return arrayOfItems.indexOf(product.id) !== -1
   })
   res.send({allItems: arrayOfItems, filteredItems: filteredItems})
 });
+
+// @route   GET api/cart/items
+// @desc    Clear all items in the cart on closing the cart
 app.get("/api/cart/clear", (req, res) => { 
   arrayOfItems = [];
   obj = { myItems: 0 };
 })
 
-app.use("/static/images", express.static(path.resolve(__dirname + "/static/images")));
+// app.use("/static/images", express.static(path.resolve(__dirname + "/static/images")));
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
 
-// var json = JSON.parse(data);
-// json.push(req.body);
-//var json =  JSON.parse(addToCart[0]);
-// var json =
-// addToCart.push(req.body);
-
-// fs.writeFile("addToCart", JSON.stringify(json));
-// });
-
-// fs.readFile("server/addToCart/index.post.json", function (err, data) {
-//   if (err) {
-//     throw err;
-//   }
-//   const content = data;
-//   console.log(typeof(content));
-
-//   var json = JSON.parse(content);
-//   console.log(json)
-//   content.push(req.body);
-//   // fs.writeFile("server/addToCart/index.post.json", JSON.stringify(content));
-
-// app.post("/api/cart/add"), (req, res) => {
-//   console.log("inside add")
-//   console.log(req.body)
-// }
-// app.post("/api/cart/add", (req, res) => {
-//   //  console.log(addToCart);
-//   console.log(req.body);
-//  addToCart.push(req.body);
-//  console.log(addToCart)
-// fs.appendFile('./server/addToCart/index.post.json', req.body, (err, data) => {
-//   if (err) {
-//     throw err;
-//   }
-// res.send(JSON.parse(data.reponse));
-// });
-
-//  arrayOfItems.map(product_id => {
-//    //console.log(product_id)
-//    //console.log(products)
-//    items = products.filter(product=>{
-//      return product.id === product._product_id})
-//    console.log(items);
-
-
-
-//  if (auth[i].password == req.body.password) {
-//    console.log("password verified");
-//    auth[i].isAuthenticated = true;
-//    console.log(auth);
-//    res.send(auth[i].isAuthenticated);
-//  } else {
-//    res.send({ err: "You are not authenticated, please signup" });
-//  }

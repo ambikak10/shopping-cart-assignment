@@ -34,12 +34,9 @@ function addToCart(product_id, price, sku) {
 function removeFromCart(product_id, price, sku) {
   fetch("http://localhost:5000/api/cart/remove", {
     method: "POST",
-    // Adding body or contents to send
     body: JSON.stringify({
       _id: product_id,
     }),
-
-    // Adding headers to the request
     headers: {
       "Content-type": "application/json",
     },
@@ -72,19 +69,13 @@ function removeFromCart(product_id, price, sku) {
 
     });
 }
-// function clearAll() {
-//   window.history.back();
-// }
+
 var modal = document.getElementById('simpleModal')
 var modalBtn =  document.getElementById('modal-btn')
-// var closeBtn =  document.getElementById('close-x')
-// console.log(closeBtn)
 modalBtn.addEventListener('click',  openModal);
 
-
-
 async function openModal(){
-  if(window.isValidUser){
+  // if(window.isValidUser){
   modal.style.display = "block";
   const content =  document.getElementsByClassName('cartcard')[0];
  const res = await fetch("http://localhost:5000/api/cart/items", {
@@ -213,10 +204,11 @@ async function openModal(){
             </div>
           </div>`
      }
-    } else {
-      window.location.href="/client"
-    }
-   }
+    } 
+    // else {
+    //   window.location.href="/client"
+    // }
+  //  }
 
 async function closeModal(){
  
@@ -228,44 +220,3 @@ async function closeModal(){
   document.getElementById("items").innerHTML = 0 + `   items`;
    modal.style.display = "none";
   }
-
-
-
-// function decrement(product_id) {
-//   removeFromCart(product_id);
-
-//   function increment(product_id) {
-//     addToCart(product_id);
-//   }
-
-// console.log(index);
-// var quantity = parseInt(
-//   document.getElementsByClassName("qt")[index].innerHTML
-// );
-//  var next_qt = parseInt(document.getElementsByClassName("qt")[index+1].innerHTML);
-// quantity--;
-// if (!quantity) {
-//   document.getElementsByClassName("cart-items")[index].remove();
-//  document.getElementsByClassName("qt")[
-//     index
-//   ].innerHTML = next_qt.toString();
-// } else {
-//   document.getElementsByClassName("qt")[
-//     index
-//   ].innerHTML = quantity.toString();
-// }
-// }
-
-// var quantity = parseInt(
-//   document.getElementsByClassName("qt")[index].innerHTML
-// );
-// quantity++;
-// document.getElementsByClassName("qt")[index].innerHTML = quantity.toString();
-      // let totalItemPrice =
-      //   document.getElementsByClassName(price)[0].innerHTML * quantity;
-      // document.getElementById(price).innerHTML = totalItemPrice;
-      // let sum = parseInt(document.getElementById("item-cost").innerHTML);
-      // let x = document.querySelectorAll(".item-cost");
-      // for(let i=0; i < x.length; i++){
-
-      // }

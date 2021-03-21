@@ -5,10 +5,7 @@ const HomeScreen = {
                 slidesToShow: 1,
                 slidesToScroll: 1,
                 dots: true,
-                // infinite: true,
-                // cssEase: "linear",
-                arrows: true,
-                
+                arrows: true,  
               });
             });
   },
@@ -61,13 +58,13 @@ const HomeScreen = {
                 <div tabindex ='0'class='row' aria-label="category section in home page">
                   <div class='home-categories'>
                     <img tabindex ='0'class='category-image' src='${item.imageUrl}'/>
-                    <div style='text-align: center'>
-                      <h1 tabindex ='0'id="homepage-itemname">${item.name}</h1>
-                      <div tabindex ='0'style='word-wrap: break-word; width: 390px;font-size: 1.1rem'>
+                    <div id="details-section">
+                      <h1 tabindex ='0'>${item.name}</h1>
+                      <div tabindex ='0'>
                         ${item.description}
                       </div>
 
-                   <button role="navigation to category products"onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                   <button role="navigation to category products"onclick="window.location.href='/client/#/products/${item.id}'"  type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
@@ -78,16 +75,16 @@ const HomeScreen = {
                 return `
                 <div class='row'tabindex ='0'>
                   <div class='home-categories'aria-label="category section in home page">
-                    <div style='text-align:center'>
-                      <h1 tabindex ='0'id="homepage-itemname">${item.name}</h1>
-                      <div tabindex ='0'style='word-break: break-word; width: 380px; font-size: 1.1rem'>
+                    <div id="details-section">
+                      <h1 tabindex ='0'>${item.name}</h1>
+                      <div tabindex ='0'>
                         ${item.description}
                       </div>
-                      <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" class='homeCategoriesButton' type='submit'>
+                      <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
-                    <img tabindex ='0'class='category-image'
+                    <img tabindex ='0'
                       src=${item.imageUrl}
                     />
                   </div>

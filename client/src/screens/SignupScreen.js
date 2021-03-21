@@ -1,5 +1,5 @@
 const SignupScreen = {
-  after_render: () => {
+  after_render: (window) => {
   const password1 = document.getElementById("password1");
   const password2 = document.getElementById("password2");
   const email = document.getElementById("signup-email");
@@ -49,8 +49,9 @@ const SignupScreen = {
       })
         .then((response) => response.json())
         .then((body) => {
-          console.log(window.isValidUser);
+           console.log(window.isValidUser);
            window.isValidUser = true;
+           console.log(window.isValidUser);
            window.location.href = "/client/#/home";
         });
   }});
@@ -59,9 +60,9 @@ const SignupScreen = {
     return `
       <div class='container'>
       <div class='login'>
-        <div tabindex='0'style="color: black; font-size: 1.4rem; font-weight: bold">
+        <div class="d-none d-sm-block d-sm-none d-md-block" tabindex='0'>
           Signup
-           <div style="color: grey; font-size: 1.1rem; font-weight: bold">
+           <div>
             We do not share your personal details with anyone
           </div>
         </div>
