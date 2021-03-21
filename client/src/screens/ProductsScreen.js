@@ -1,6 +1,11 @@
 import { parseRequestUrl } from "../supportingJSFiles/utils.js";
 
 const ProductsScreen = {
+  after_render: () =>{
+    // if (item.id === _id) {
+    //   document.getElementById("option1").value = `${item.name}`;
+    // } 
+  },
   render: async () => {
     const resCategories = await fetch("http://localhost:5000/api/categories", {
       headers: {
@@ -71,34 +76,45 @@ const ProductsScreen = {
         </div>
       </div>
     </div>
-    
-    
-       <div id="mobile-view">
-
-    <select name="categories">
-    <option value="categories">Categories</option>
-    <option value="saab">Saab</option>
-    <option value="opel">Opel</option>
-    <option value="audi">Audi</option>
-    </select>
    
-
-  <div class="container-fluid">
-     <h2>Apple</h2>
-     <div class="row">
-      <div class=" col-6">
-   <img src="/client/assets/logo.png" alt="">
+    <div class="mobile-view">
+    <select id="mySelect" name="categories" onchange="return selectChangeHandler()" >
+    <option>Categories</option>
+     ${categories
+       .map((item) => {
+         if(item.id === _id){
+           return `<option selected="true"value=${item.id}>${item.name}</option>`}else{
+             return `<option value=${item.id}>${item.name}</option>`
+           }
+         }) 
+       })
+       .join("\n")}
+    </select></div>
+      
+  <div class="mobile-view container-fluid">
+      ${products
+        .map((item) => {
+          return `
+            <div class="row">
+     <p>${item.name}</p>
+      <div class="col-6">
+   <img src=${item.imageURL}  tabindex='0' alt=${item.name}>
      </div>
         <div class="col-6 desc">
-         <section>These Wipes have aloe vera as key ingredient which makes it the best choice for baby hygiene, make-up remover, sanitizing your face and hand after a long drive, sports or any other situation where you need a quick hygiene solution</section>
-         <button>Buy now @ MRP Rs.200</button>
+         <section  tabindex='0'>${item.description}</section>
+         <button id="buy-now" onclick="return addToCart('${item.id}', null, null)">Buy now @ MRP Rs.${item.price}</button>
          </div>
      </div>
-     </div>
+     `;
+        })
+        .join("\n")}
+        
+        </div>
+        <div class="mobile-view"></div>
+     `;
 
- </div>
-
-    `;
   },
 };
 export default ProductsScreen;
+
+// style = "border-bottom: 0.09px dotted rgb(202, 199, 199)";

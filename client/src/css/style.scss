@@ -254,7 +254,6 @@ button.slick-next:focus {
 .my-container {
   width: 88.5rem;
   padding-left: 10.5rem;
-  display: block;
 }
 .products-page-card {
   height: 33.125rem;
@@ -492,8 +491,13 @@ button.slick-next:focus {
 #items {
   color: black;
 }
-#mobile-view {
+@media (min-width: 700px) {
+.mobile-view {
   display: none;
+}
+.my-container{
+  display: block;
+}
 }
 /****grid****/
 @media (min-width: 700px) {
@@ -633,7 +637,7 @@ button.slick-next:focus {
   .my-container {
     display: none;
   }
-  #mobile-view {
+  .mobile-view {
     display: block;
   }
   div > select {
@@ -648,7 +652,7 @@ button.slick-next:focus {
   .container-fluid {
     margin-bottom: 1rem;
   }
-  .container-fluid img {
+  img {
     height: 12rem;
     width: 12rem;
     padding-right: 1rem;
@@ -695,4 +699,5 @@ button.slick-next:focus {
     bottom: 0;
     width: 11rem;
   }
+ 
 }
