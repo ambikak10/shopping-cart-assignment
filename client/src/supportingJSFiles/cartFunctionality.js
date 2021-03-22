@@ -1,3 +1,4 @@
+
 function addToCart(product_id, price, sku) {
   fetch("http://localhost:5000/api/cart/add", {
     method: "POST",
@@ -13,7 +14,7 @@ function addToCart(product_id, price, sku) {
     },
   }).then((response) => response.json())
     .then((body) => {
-      document.getElementById("items").innerHTML = body.myItems + `   items`;
+      document.getElementById("items").innerHTML = body.myItems + `    items`;
       document.getElementById(
         "nav-total"
       ).innerHTML = `( ${body.myItems}  items )`;
@@ -102,6 +103,7 @@ async function openModal(){
         cartTotal = cartTotal + itemInCart[i].price * map[itemInCart[i].id];
       }
     }
+    console.log(totalItems);
     if (totalItems !== 0) {
       content.innerHTML = ` <div tabindex='0' aria-hidden="false"aria-label="open cart items"class='flex-box'>
           <div class='cart-flex-nav'>
@@ -212,11 +214,12 @@ async function openModal(){
 
 async function closeModal(){
  
-  fetch("http://localhost:5000/api/cart/clear", {
+   fetch("http://localhost:5000/api/cart/clear", {
     headers: {
       "Content-type": "application/json",
     },
-  });
-  document.getElementById("items").innerHTML = 0 + `   items`;
-   modal.style.display = "none";
+  }).then(response => {
+     document.getElementById("items").innerHTML = "";
+     modal.style.display = "none";
+  })
   }

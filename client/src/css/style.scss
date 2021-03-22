@@ -302,6 +302,7 @@ button.slick-next:focus {
     padding-right: 0.7rem;
     padding-bottom: 0.5rem;
     font-weight: 400;
+    margin-top: 1rem;
   }
   div {
     display: block;
@@ -520,7 +521,7 @@ button.slick-next:focus {
 }
 }
 /****grid****/
-@media (min-width: 641px) {
+@media (min-width: 767px) {
   .lg-1,
   .lg-2,
   .lg-3,
@@ -583,7 +584,7 @@ button.slick-next:focus {
   }
 }
 
-@media (min-width: 360px) and (max-width: 640px) {
+@media (min-width: 350px) and (max-width: 766px) {
   .xs-1,
   .xs-2,
   .xs-3,
@@ -648,16 +649,19 @@ button.slick-next:focus {
 
 
 /****Mobile device responsiveness****/
-@media (max-width: 641px) {
+@media (min-width: 350px) and(max-width: 766px) {
   /****Navbar Mobile****/
   .navbar {
     position: relative;
   }
   a > img {
-    width: 4.875rem;
+    width: 5.875rem;
     height: 2.75rem;
-    margin-left: -45px;
+    margin-left: -40px;
   }
+  .buttons img{
+   padding: 0rem;
+}
   .signup-login {
     float: right;
     margin-top: 0.5rem;
@@ -666,7 +670,7 @@ button.slick-next:focus {
   .home-products {
     position: absolute;
     font-size: 0.8rem;
-    left: 50px;
+    left: 55px;
     padding: 1px;
   }
   /****Home page Mobile****/

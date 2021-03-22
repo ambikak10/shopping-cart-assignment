@@ -1,9 +1,9 @@
-import HomeScreen from './screens/HomeScreen.js';
+import HomeScreen from "./screens/HomeScreen.js";
 import LoginScreen from "./screens/LoginScreen.js";
 import ProductsScreen from "./screens/ProductsScreen.js";
 import Error404Screen from "./screens/Error404Screen.js";
 import SignupScreen from "./screens/SignupScreen.js";
-import {parseRequestUrl} from './supportingJSFiles/utils.js';
+import { parseRequestUrl } from "./supportingJSFiles/utils.js";
 
 const routes = {
   "/": LoginScreen,
@@ -13,13 +13,12 @@ const routes = {
   "/login": LoginScreen,
   "/products/:id": ProductsScreen,
 };
-const router = async() => {
- const request = parseRequestUrl();
- var parseUrl =
-   (request.resource ? `/${request.resource}` : "/") 
-   +
-   (request.id ? "/:id" : "") +
-   (request.verb ? `/${request.verb}` : "");
+const router = async () => {
+  const request = parseRequestUrl();
+  var parseUrl =
+    (request.resource ? `/${request.resource}` : "/") +
+    (request.id ? "/:id" : "") +
+    (request.verb ? `/${request.verb}` : "");
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
   // console.log(window.isValidUser);
   // var screen;
@@ -55,11 +54,19 @@ const router = async() => {
   //     screen = Error404Screen;
   //   }
   // }
-
-  const main = document.getElementById('middle');
+  const res = await fetch("http://localhost:5000/api/cart/items", {
+    headers: {
+      "Content-type": "application/json",
+    },
+  });
+  const cartItems = await res.json();
+  const totalItems = cartItems.allItems ? cartItems.allItems.length : 0;
+  if(totalItems){
+  document.getElementById("items").innerHTML = `${totalItems}  items`
+  };
+  const main = document.getElementById("middle");
   main.innerHTML = await screen.render();
   if (screen.after_render) screen.after_render(window);
-
-}
+};
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);

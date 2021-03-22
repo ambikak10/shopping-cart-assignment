@@ -22,7 +22,7 @@ const SignupScreen = {
       messages.push("Password must have atleast one number");
     }
     if (!password1.value.match(alphabets)) {
-      messages.push("Password must have atleast one character");
+      messages.push("Password must have atleast one alphabet");
     }
     if (password2.value.length) {
       if (password1.value !== password2.value) {

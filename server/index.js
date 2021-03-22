@@ -56,13 +56,10 @@ app.post("/api/login", (req, res) => {
         //console.log("email not verified");
         return res.send(JSON.stringify({ err: "Password is incorrect" }));
       }
-  } else {
-    console.log("email not verified")
-     return res.send(JSON.stringify({err: "This is not a registered email"}))
-  }
+  } 
 }
-    // console.log("signup please")
-    return res.send(JSON.stringify({err: "Please Signup"}))
+    console.log("email not verified");
+    return res.send(JSON.stringify({ err: "This is not a registered email" }));
 });
 
 // @route   GET api/banners
@@ -129,6 +126,8 @@ app.get("/api/cart/items", (req, res) => {
 app.get("/api/cart/clear", (req, res) => { 
   arrayOfItems = [];
   obj = { myItems: 0 };
+  console.log(arrayOfItems, obj);
+  res.send({message: "cart cleared"})
 })
 
 // app.use("/static/images", express.static(path.resolve(__dirname + "/static/images")));
