@@ -21,8 +21,10 @@ const router = async() => {
    (request.id ? "/:id" : "") +
    (request.verb ? `/${request.verb}` : "");
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+  // console.log(window.isValidUser);
+  // var screen;
   // if (window.isValidUser) {
-  //   console.log(Window.isValidUser)
+  //   console.log(window.isValidUser)
   //   console.log(parseUrl)
   //   if (
   //     (parseUrl == "/home" ||
@@ -46,7 +48,7 @@ const router = async() => {
   //     parseUrl == "/login" ||
   //     parseUrl == "/products/:id"
   //   ) {
-  //     screen = routes["/"];
+  //     screen = routes["/login"];
   //   } else if (parseUrl == "/signup") {
   //     screen = routes["/signup"];
   //   } else {

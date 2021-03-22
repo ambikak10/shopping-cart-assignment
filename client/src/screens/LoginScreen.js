@@ -2,11 +2,12 @@ const LoginScreen = {
   after_render: () => {
     const password = document.getElementById("password");
     const form = document.getElementById("loginForm");
-      const email = document.getElementById("login-email");
+    const email = document.getElementById("login-email");
     const errorElement = document.getElementById("error");
     var numbers = /[0-9]/g;
     var alphabets = /[a-zA-Z]/g;
-    form.addEventListener("submit", (e) => {
+    var isAuthenticated;
+   isAuthenticated = form.addEventListener("submit", async(e) => {
       var messages = [];
 
       if (password.value.length < 6) {
@@ -28,7 +29,6 @@ const LoginScreen = {
         errorElement.innerText = messages.join(", ");
       } else  {
         e.preventDefault();
-        
         fetch("http://localhost:5000/api/login", {
           method: "POST",
 
@@ -47,15 +47,24 @@ const LoginScreen = {
           if(body.err) { 
             alert(body.err);
           } else if(body.isAuthenticated) {
-            window.isValidUser = body.isAuthenticated;
-            console.log(isValidUser)
+            // window.isValidUser = body.isAuthenticated;
+            isAuthenticated =  body.isAuthenticated;
+            //console.log(isValidUser)
             window.location.href='/client/#/home'
+            return isAuthenticated;
           }
 
         });
       }
-    });
-
+    })
+    // .then((window) => {
+    //   window.isAuthenticated = true;
+    // }).catch(err => {
+    //   console.log(err);
+    // });
+    console.log(isAuthenticated)
+    console.log(window.isValidUser)
+    window.isValidUser = isAuthenticated;
   },
      render: () => {
  return `

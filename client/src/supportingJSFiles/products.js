@@ -8,7 +8,6 @@ function selectChangeHandler(){
  } else {
  //document.getElementById("option1").value = text;
  window.location.href = `/client/#/products/${x}`;
- 
  //document.getElementById("option1")[0].innerHTML = text; 
 }
 }

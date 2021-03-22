@@ -84,7 +84,7 @@ const HomeScreen = {
                         Explore ${item.key}
                       </button>
                     </div>
-                    <img tabindex ='0'
+                    <img class='category-image'tabindex ='0'
                       src=${item.imageUrl}
                     />
                   </div>

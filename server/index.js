@@ -27,7 +27,6 @@ app.get("/", (req, res) => {
 
 app.post("/api/signup", (req, res) => {
   auth.push(req.body);
-  console.log(auth)
   res.send(JSON.stringify({success: "Signup successful"}))
 });
 
@@ -39,20 +38,23 @@ app.post("/api/login", (req, res) => {
   console.log(req.body);
   for(var i = 0; i < auth.length; i++){
     console.log("inside for loop")
+    
     if(auth[i].email == req.body.email){
       console.log("email verified")
       if(auth[i].password == req.body.password){
         console.log("password verified")
-      res.send(JSON.stringify({isAuthenticated : true}))
+     return res.send(JSON.stringify({isAuthenticated : true}))
       } else {
         console.log("email not verified");
-        res.send(JSON.stringify({ err: "Password is incorrect" }));
+        return res.send(JSON.stringify({ err: "Password is incorrect" }));
       }
   } else {
     console.log("email not verified")
-    res.send(JSON.stringify({err: "Email already exists"}))
+     return res.send(JSON.stringify({err: "Email already exists"}))
   }
 }
+    // console.log("signup please")
+    return res.send(JSON.stringify({err: "Please Signup"}))
 });
 
 // @route   GET api/banners
