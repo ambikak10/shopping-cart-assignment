@@ -49,10 +49,14 @@ const SignupScreen = {
       })
         .then((response) => response.json())
         .then((body) => {
+          if(body.err) { 
+            alert(body.err);
+          } else {
            console.log(window.isValidUser);
            window.isValidUser = true;
            console.log(window.isValidUser);
            window.location.href = "/client/#/home";
+          }
         });
   }});
   },

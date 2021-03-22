@@ -116,10 +116,10 @@ async function openModal(){
               return `
           
              <div class='cart-items ${item.id}'>
-            <div class='lg-3'>
+            <div class='lg-3 xs-3'>
               <img class='apple' src=${item.imageURL} alt=${item.name}/>
             </div>
-            <div class='lg-7 '>
+            <div class='lg-7 xs-7 '>
               <p>${item.name}</p>
               <button class='decrement' onclick="return removeFromCart('${
                 item.id
@@ -139,7 +139,7 @@ async function openModal(){
                 </span><span>
               
             </div>
-            <span class='lg-2 rupees'>Rs. <span class="item-cost"id=${
+            <span class='lg-2 xs-2 rupees'>Rs. <span class="item-cost"id=${
               item.sku
             }>${item.price * map[item.id]}</span></span>
           </div>`;
@@ -187,7 +187,7 @@ async function openModal(){
           >
             <section>
               
-              <p style="marginBottom: -4px; font-size:1.2rem">No items in your cart</p>
+              <p style="font-size:1.2rem">No items in your cart</p>
               <p
                 style="display: "inline-block";
                   font-weight: 100;font-size:1rem;"

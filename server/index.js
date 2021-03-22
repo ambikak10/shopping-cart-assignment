@@ -26,8 +26,17 @@ app.get("/", (req, res) => {
 // @desc    Signup a user
 
 app.post("/api/signup", (req, res) => {
-  auth.push(req.body);
-  res.send(JSON.stringify({success: "Signup successful"}))
+  console.log('signup')
+  if(auth.length > 0){
+    for (var i = 0; i < auth.length; i++) {
+      if (auth[i].email == req.body.email) {
+      return res.send(JSON.stringify({ err: "Email already exists" }));
+      } 
+    }
+  } else {
+     auth.push(req.body);
+     return res.send(JSON.stringify({ success: "Signup successful" }));
+  }
 });
 
 
@@ -38,19 +47,18 @@ app.post("/api/login", (req, res) => {
   console.log(req.body);
   for(var i = 0; i < auth.length; i++){
     console.log("inside for loop")
-    
     if(auth[i].email == req.body.email){
       console.log("email verified")
       if(auth[i].password == req.body.password){
-        console.log("password verified")
+        //console.log("password verified")
      return res.send(JSON.stringify({isAuthenticated : true}))
       } else {
-        console.log("email not verified");
+        //console.log("email not verified");
         return res.send(JSON.stringify({ err: "Password is incorrect" }));
       }
   } else {
     console.log("email not verified")
-     return res.send(JSON.stringify({err: "Email already exists"}))
+     return res.send(JSON.stringify({err: "This is not a registered email"}))
   }
 }
     // console.log("signup please")

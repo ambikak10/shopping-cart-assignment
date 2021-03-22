@@ -96,6 +96,7 @@ const ProductsScreen = {
         .map((item) => {
           return `
             <div class="row">
+          
      <p>${item.name}</p>
       <div class="col-6">
    <img src=${item.imageURL}  tabindex='0' alt=${item.name}>
@@ -108,9 +109,9 @@ const ProductsScreen = {
      `;
         })
         .join("\n")}
-        
         </div>
-        <div class="mobile-view"></div>
+       
+        
      `;
 
   },

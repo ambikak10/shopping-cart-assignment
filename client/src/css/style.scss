@@ -520,7 +520,7 @@ button.slick-next:focus {
 }
 }
 /****grid****/
-@media (min-width: 700px) {
+@media (min-width: 641px) {
   .lg-1,
   .lg-2,
   .lg-3,
@@ -583,8 +583,72 @@ button.slick-next:focus {
   }
 }
 
+@media (min-width: 360px) and (max-width: 640px) {
+  .xs-1,
+  .xs-2,
+  .xs-3,
+  .xs-4,
+  .xs-5,
+  .xs-6,
+  .xs-7,
+  .xs-8,
+  .xs-9,
+  .xs-10,
+  .xs-11,
+  .xs-12 {
+    float: left;
+  }
+  .xs-1 {
+    width: 8.33%;
+  }
+
+  .xs-2 {
+    width: 16.66%;
+  }
+
+  .xs-3 {
+    width: 25%;
+  }
+
+  .xs-4 {
+    width: 33%;
+  }
+
+  .xs-5 {
+    width: 41.66%;
+  }
+
+  .xs-6 {
+    width: 50%;
+  }
+
+  .xs-7 {
+    width: 58.33%;
+  }
+  .xs-8 {
+    width: 66.66%;
+  }
+
+  .xs-9 {
+    width: 74.99%;
+  }
+
+  .xs-10 {
+    width: 83.33%;
+  }
+
+  .xs-11 {
+    width: 91.66%;
+  }
+
+  .xs-12 {
+    width: 100%;
+  }
+}
+
+
 /****Mobile device responsiveness****/
-@media (max-width: 699px) {
+@media (max-width: 641px) {
   /****Navbar Mobile****/
   .navbar {
     position: relative;
@@ -719,5 +783,37 @@ button.slick-next:focus {
     bottom: 0;
     width: 11rem;
   }
- 
+ /****cart mobile***/
+ div.flex-box-empty {
+  width: 22rem;
+  height: 30.25rem;
+ }
+ .cart-footer button{
+   width: 19rem;
+ }
+.wont-find-cheaper img{
+  width: 7rem;
+  height: 2.2rem;
+}
+.flex-box{
+  width: 22rem;
+  height: 30rem;
+ }
+ .wrapping .wont-find-cheaper{
+   width: 19rem;
+ }
+.wont-find-cheaper{
+  width: 21rem;
+}
+.wrapping{
+  height: 15rem;
+}
+div.mobile-view>.row{
+  border-bottom: 1px dotted rgb(190, 188, 188);
+  margin-bottom: 2rem;
+  padding-bottom: 0.6rem;
+  height: 270px;
+//   margin-right: 1rem;
+//   margin-left: 1rem;
+}
 }

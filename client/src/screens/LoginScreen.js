@@ -8,26 +8,26 @@ const LoginScreen = {
     var alphabets = /[a-zA-Z]/g;
     var isAuthenticated;
    isAuthenticated = form.addEventListener("submit", async(e) => {
-      var messages = [];
+      // var messages = [];
 
-      if (password.value.length < 6) {
-        messages.push("Password must be atleast 6 characters");
-      }
+      // if (password.value.length < 6) {
+      //   messages.push("Password must be atleast 6 characters");
+      // }
 
-      if (password.value.indexOf(" ") >= 0) {
-        messages.push("Password must not have space");
-      }
+      // if (password.value.indexOf(" ") >= 0) {
+      //   messages.push("Password must not have space");
+      // }
 
-      if (!password.value.match(numbers)) {
-        messages.push("Password must have atleast one number");
-      }
-      if (!password.value.match(alphabets)) {
-        messages.push("Password must have atleast one character");
-      }
-      if (messages.length > 0) {
-        e.preventDefault();
-        errorElement.innerText = messages.join(", ");
-      } else  {
+      // if (!password.value.match(numbers)) {
+      //   messages.push("Password must have atleast one number");
+      // }
+      // if (!password.value.match(alphabets)) {
+      //   messages.push("Password must have atleast one character");
+      // }
+      // if (messages.length > 0) {
+      //   e.preventDefault();
+      //   errorElement.innerText = messages.join(", ");
+      // } else  {
         e.preventDefault();
         fetch("http://localhost:5000/api/login", {
           method: "POST",
@@ -55,7 +55,7 @@ const LoginScreen = {
           }
 
         });
-      }
+      // }
     })
     // .then((window) => {
     //   window.isAuthenticated = true;
