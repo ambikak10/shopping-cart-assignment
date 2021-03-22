@@ -1,5 +1,5 @@
 
-function addToCart(product_id, price, sku) {
+function addToCart(product_id, sku) {
   fetch("http://localhost:5000/api/cart/add", {
     method: "POST",
 
@@ -32,7 +32,7 @@ function addToCart(product_id, price, sku) {
       document.getElementById("cart-price").innerHTML = sum;
     });
 }
-function removeFromCart(product_id, price, sku) {
+function removeFromCart(product_id, sku) {
   fetch("http://localhost:5000/api/cart/remove", {
     method: "POST",
     body: JSON.stringify({
@@ -96,8 +96,9 @@ async function openModal(){
         return obj;
       }, {});
     }
-    var cartTotal = 0;
+    let cartTotal = 0;
     if (cartItems.filteredItems) var itemInCart = cartItems.filteredItems;
+    console.log(itemInCart)
     for(let i = 0; i < itemInCart.length; i++){
       if(itemInCart[i].id in map){
         cartTotal = cartTotal + itemInCart[i].price * map[itemInCart[i].id];
@@ -125,13 +126,13 @@ async function openModal(){
               <p>${item.name}</p>
               <button class='decrement' onclick="return removeFromCart('${
                 item.id
-              }', ${item.price}, '${item.sku}')">
+              }', '${item.sku}')">
                   <span class="plusOrMinus">-</span>
                 </button>
                 <span class='qt' id=${item.id}>${map[item.id]}</span>
                 <button class='increment'onclick="return addToCart('${
                   item.id
-                }', ${item.price}, '${item.sku}')">
+                }', '${item.sku}')">
                   <span class="plusOrMinus">+</span>
                 </button>
                 <span class="price"> X&nbsp;&nbsp;&nbsp; Rs.<span class=" ${

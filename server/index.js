@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 // @desc    Signup a user
 
 app.post("/api/signup", (req, res) => {
-  console.log('signup')
   if(auth.length > 0){
     for (var i = 0; i < auth.length; i++) {
       if (auth[i].email == req.body.email) {
@@ -46,14 +45,10 @@ app.post("/api/signup", (req, res) => {
 app.post("/api/login", (req, res) => {
   console.log(req.body);
   for(var i = 0; i < auth.length; i++){
-    console.log("inside for loop")
     if(auth[i].email == req.body.email){
-      console.log("email verified")
       if(auth[i].password == req.body.password){
-        //console.log("password verified")
      return res.send(JSON.stringify({isAuthenticated : true}))
       } else {
-        //console.log("email not verified");
         return res.send(JSON.stringify({ err: "Password is incorrect" }));
       }
   } 
@@ -86,7 +81,7 @@ app.get("/api/products", (req, res) => {
 
 app.post("/api/cart/add", (req, res) => {
   arrayOfItems.push(req.body._id);
-  var x = arrayOfItems.length;
+  let x = arrayOfItems.length;
     obj['myItems'] = x;
   let key = req.body._id;
   if(obj[key]){
@@ -102,7 +97,7 @@ app.post("/api/cart/add", (req, res) => {
 
 app.post("/api/cart/remove", (req, res) => {
   arrayOfItems.splice(arrayOfItems.indexOf(req.body._id), 1);
-   var x = arrayOfItems.length;
+   let x = arrayOfItems.length;
    obj["myItems"] = x;
    let key = req.body._id;
    if (obj[key]) {
@@ -121,16 +116,14 @@ app.get("/api/cart/items", (req, res) => {
   res.send({allItems: arrayOfItems, filteredItems: filteredItems})
 });
 
-// @route   GET api/cart/items
+// @route   GET api/cart/clear
 // @desc    Clear all items in the cart on closing the cart
 app.get("/api/cart/clear", (req, res) => { 
   arrayOfItems = [];
   obj = { myItems: 0 };
-  console.log(arrayOfItems, obj);
   res.send({message: "cart cleared"})
 })
 
-// app.use("/static/images", express.static(path.resolve(__dirname + "/static/images")));
 const port = 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

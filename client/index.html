@@ -25,30 +25,30 @@
 <body>
   <div class='navbar'>
     <nav class='container'>
-      <section>
+      <section aria-label="categories">
         <ul>
           <li>
             <a href="/client"><img src="./assets/logo.png" alt='sabka-bazar site logo' /></a>
           </li>
           <li class='home-products'>
-            <a href='/client/#/home'>Home</a>
+            <a role="button"href='/client/#/home'>Home</a>
           </li>
           <li class='home-products d-sm-none d-md-block d-none d-sm-block'>
-            <a href='/client/#/products'>Products</a>
+            <a role="button"href='/client/#/products'>Products</a>
           </li>
         </ul>
         <ul class='signup-login'>
           <li>
-            <a href='/client/#/Signup'>Sign Up</a>
+            <a role="button"href='/client/#/Signup'>Sign Up</a>
           </li>
           <li>
-            <a href='/client/#/login'>Login</a>
+            <a role="button"href='/client/#/login'>Login</a>
           </li>
           <li>
             <!-- <a href='/client/#/cart'> -->
-              <button id="modal-btn" class="buttons"
-              style="background-color: gainsboro; outline: none; border: none; color: gray" on>
-                <img class='cart-nav' src="./assets/cart.svg" alt='cart-logo' /><span id="items"></span>
+              <button id="modal-btn"
+             >
+                <img src="./assets/cart.svg" alt='cart-logo' /><span id="items"></span>
               </button>
             <!-- </a> -->
           </li>
@@ -70,7 +70,7 @@
   <!-- slick scripts -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script type="text/javascript" src="./src/supportingJSFiles/cartFunctionality.js"></script>
+    <script type="text/javascript" src="./src/screens/cartFunctionality.js"></script>
     <script type="text/javascript" src="./src/supportingJSFiles/products.js"></script>
   
 

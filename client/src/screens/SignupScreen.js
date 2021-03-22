@@ -5,10 +5,10 @@ const SignupScreen = {
   const email = document.getElementById("signup-email");
   const form = document.getElementById("signupForm");
   const errorElement = document.getElementById("error");
-  var numbers = /[0-9]/g;
-  var alphabets = /[a-zA-Z]/g;
+  let numbers = /[0-9]/g;
+  let alphabets = /[a-zA-Z]/g;
   form.addEventListener("submit", (e) => {
-    var messages = [];
+    let messages = [];
   
     if (password1.value.length < 6) {
       messages.push("Password must be atleast 6 characters");

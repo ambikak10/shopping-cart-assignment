@@ -4,11 +4,11 @@ const LoginScreen = {
     const form = document.getElementById("loginForm");
     const email = document.getElementById("login-email");
     const errorElement = document.getElementById("error");
-    var numbers = /[0-9]/g;
-    var alphabets = /[a-zA-Z]/g;
-    var isAuthenticated;
+    let numbers = /[0-9]/g;
+    let alphabets = /[a-zA-Z]/g;
+    let isAuthenticated;
    isAuthenticated = form.addEventListener("submit", async(e) => {
-      // var messages = [];
+      // let messages = [];
 
       // if (password.value.length < 6) {
       //   messages.push("Password must be atleast 6 characters");

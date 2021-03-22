@@ -25,9 +25,9 @@ const ProductsScreen = {
     if (!resProducts || !resProducts.ok) {
       return "<div>Error in getting products</div>";
     }
-    var products = await resProducts.json();
+    let products = await resProducts.json();
     const request = parseRequestUrl();
-    var _id = request.id;
+    let _id = request.id;
     if (_id) {
       products = products.filter((item) => {
         return item.category === _id;
@@ -65,7 +65,7 @@ const ProductsScreen = {
                   <section  tabindex='0'>${item.description}</section>
                   <div>
                     <span  tabindex='0'>MRP Rs.${item.price}</span>
-                    <button id="buy-now" onclick="return addToCart('${item.id}', null, null)">
+                    <button id="buy-now" onclick="return addToCart('${item.id}', null)">
                       Buy Now
                     </button>
                   </div>

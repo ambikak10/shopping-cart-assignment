@@ -56,9 +56,17 @@ a {
   @include displayFlex;
   justify-content: center;
 }
-.cart-nav {
+#modal-btn{
+  background-color: gainsboro; 
+  outline: none; 
+  border: none; 
+
+  img {
   height: $fourth-measurement;
   width: 2.5rem;
+  outline: none; 
+  border: none; 
+  }
 }
 /****Navbar End****/
 
@@ -659,7 +667,7 @@ button.slick-next:focus {
     height: 2.75rem;
     margin-left: -40px;
   }
-  .buttons img{
+  #modal-btn img{
    padding: 0rem;
 }
   .signup-login {

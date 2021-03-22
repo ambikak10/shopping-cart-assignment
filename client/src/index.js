@@ -21,7 +21,7 @@ const router = async () => {
     (request.verb ? `/${request.verb}` : "");
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
   // console.log(window.isValidUser);
-  // var screen;
+  // let screen;
   // if (window.isValidUser) {
   //   console.log(window.isValidUser)
   //   console.log(parseUrl)
