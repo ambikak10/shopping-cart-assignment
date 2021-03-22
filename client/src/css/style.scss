@@ -9,6 +9,7 @@
 button:focus {
   box-shadow: 0 0.0625rem 0.5rem rgb(124, 123, 123);
 }
+/****General End****/
 
 /****Navbar****/
 .navbar {
@@ -59,6 +60,8 @@ a {
   height: $fourth-measurement;
   width: 2.5rem;
 }
+/****Navbar End****/
+
 /****Footer****/
 .footer {
   width: 100%;
@@ -67,6 +70,7 @@ a {
   height: $secondary-measurement;
   background-color: rgb(209, 209, 209);
 }
+/****Footer Ended****/
 
 /****Login page****/
 .login {
@@ -125,7 +129,10 @@ input:focus {
   text-align: center;
   padding-bottom: $margin-or-padding;
 }
-/****Home page carousel ****/
+/****Login page End****/
+
+/****HOME PAGE****/
+/****carousel ***/
 .container-slick {
   padding: $primaryMeasure;
 }
@@ -161,10 +168,12 @@ button.slick-next {
   width: 3rem;
   right: -20px;
 }
+
 button.slick-prev:focus,
 button.slick-next:focus {
   background-color: rgba(0, 0, 0, 0.5);
 }
+/****Carousel End ****/
 
 .fancy-line {
   border: 0rem;
@@ -196,7 +205,7 @@ button.slick-next:focus {
     rgba(0, 0, 0, 0) 100%
   );
 }
-/****Home page categories****/
+/****categories****/
 .home-categories {
   @include displayFlex;
   justify-content: space-evenly;
@@ -224,8 +233,11 @@ button.slick-next:focus {
   width: 18.75rem;
   height: 12.5rem;
 }
+/**categories end***/
+/***HOME PAGE END***/
 
-/****Product page side categories listing****/
+/****PRODUCT PAGE****/
+/***categories****/
 .productPage-categories {
   background-color: rgb(231, 230, 230);
   min-height: 100vh;
@@ -248,6 +260,8 @@ button.slick-next:focus {
     background-color: rgb(199, 199, 199);
   }
 }
+
+/****products listing****/
 .custom-row {
   width: 100%;
 }
@@ -311,6 +325,8 @@ button.slick-next:focus {
 //   justify-content: center;
 //   flex-direction: row;
 // }
+
+/****CART****/
 .cartcard {
   justify-content: center;
   @include displayFlex;
@@ -330,6 +346,8 @@ button.slick-next:focus {
   background-color: $textColor;
   position: relative;
 }
+
+/****modal view****/
 .modal-view {
   display: none;
   position: fixed;
@@ -491,6 +509,8 @@ button.slick-next:focus {
 #items {
   color: black;
 }
+
+
 @media (min-width: 700px) {
 .mobile-view {
   display: none;

@@ -57,14 +57,14 @@ const HomeScreen = {
                 return `
                 <div tabindex ='0'class='row' aria-label="category section in home page">
                   <div class='home-categories'>
-                    <img tabindex ='0'class='category-image' src='${item.imageUrl}'/>
+                    <img tabindex ='0'class='category-image' src='${item.imageUrl}' alt=${item.name}/>
                     <div id="details-section">
                       <h1 tabindex ='0'>${item.name}</h1>
                       <div tabindex ='0'>
                         ${item.description}
                       </div>
 
-                   <button role="navigation to category products"onclick="window.location.href='/client/#/products/${item.id}'"  type='submit'>
+                   <button role="navigation"onclick="window.location.href='/client/#/products/${item.id}'"  type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
@@ -80,12 +80,12 @@ const HomeScreen = {
                       <div tabindex ='0'>
                         ${item.description}
                       </div>
-                      <button role="navigation to category products" onclick="window.location.href='/client/#/products/${item.id}'" type='submit'>
+                      <button role="navigation" onclick="window.location.href='/client/#/products/${item.id}'" type='submit'>
                         Explore ${item.key}
                       </button>
                     </div>
                     <img class='category-image'tabindex ='0'
-                      src=${item.imageUrl}
+                      src=${item.imageUrl} alt=${item.name}
                     />
                   </div>
                   <div class='fancy-line'></div>
