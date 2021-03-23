@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="dist/css/style.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- slick-carousel -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" rel="stylesheet" />
+  <!---slick css end-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabka Bazaar</title>
+
+
+  <script type="module" src="./src/index.js"></script>
+
+<script defer src="bundle.js"></script></head>
+
+<body>
+  <div class='navbar'>
+    <nav class='container'>
+      <section aria-label="categories">
+        <ul>
+          <li>
+            <a href="/client"><img src="./assets/logo.png" alt='sabka-bazar site logo' /></a>
+          </li>
+          <li class='home-products'>
+            <a role="button"href='/client/#/home'>Home</a>
+          </li>
+          <li class='home-products d-sm-none d-md-block d-none d-sm-block'>
+            <a role="button"href='/client/#/products'>Products</a>
+          </li>
+        </ul>
+        <ul class='signup-login'>
+          <li>
+            <a role="button"href='/client/#/Signup'>Sign Up</a>
+          </li>
+          <li>
+            <a role="button"href='/client/#/login'>Login</a>
+          </li>
+          <li>
+            <!-- <a href='/client/#/cart'> -->
+              <button id="modal-btn"
+             >
+                <img src="./assets/cart.svg" alt='cart-logo' /><span id="items"></span>
+              </button>
+            <!-- </a> -->
+          </li>
+        </ul>
+      </section>
+    </nav>
+  </div>
+
+  <main id="middle"></main>
+      <div class="center modal-view" id="simpleModal">
+        <div class='cartcard' >
+   
+        </div>
+      </div>
+
+  <div class='footer'>
+    Copyright &#169; 2011-2021 Sabka Bazaar Grocery Supplies Pvt Ltd
+  </div>
+  <!-- slick scripts -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="./src/screens/cartFunctionality.js"></script>
+    <script type="text/javascript" src="./src/supportingJSFiles/products.js"></script>
+  
+
+  <!-- end
+  <script src="./dist/main.js"></script> -->
+</body>
+
+</html>

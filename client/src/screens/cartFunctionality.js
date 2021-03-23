@@ -110,7 +110,7 @@ async function openModal(){
           <div class='cart-flex-nav'>
             <p>
               My Cart <span id="nav-total">( ${totalItems}  items )</span>
-              <button onclick = "return closeModal()" id='close-x'>X</button>
+              <button onclick = "return closeModalwithoutClearing()" id='close-x'>X</button>
             </p>
           </div>
           <div class="wrapping">
@@ -205,7 +205,7 @@ async function openModal(){
                 Start Shopping        
               </button>
             </div>
-          </div>`
+          </div>`;
      }
     } 
     // else {
@@ -224,3 +224,6 @@ async function closeModal(){
      modal.style.display = "none";
   })
   }
+function closeModalwithoutClearing(){
+   modal.style.display = "none";
+}
