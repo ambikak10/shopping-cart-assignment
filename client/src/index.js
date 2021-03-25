@@ -5,13 +5,19 @@ import Error404Screen from "./screens/Error404Screen.js";
 import SignupScreen from "./screens/SignupScreen.js";
 import { parseRequestUrl } from "./supportingJSFiles/utils.js";
 
+const home = new HomeScreen();
+const login = new LoginScreen();
+const error = new Error404Screen();
+const signup = new SignupScreen();
+const products = new ProductsScreen();
+
 const routes = {
-  "/": LoginScreen,
-  "/home": HomeScreen,
-  "/products": ProductsScreen,
-  "/signup": SignupScreen,
-  "/login": LoginScreen,
-  "/products/:id": ProductsScreen,
+  "/": login,
+  "/home": home,
+  "/products": products,
+  "/signup": signup,
+  "/login": login,
+  "/products/:id": products,
 };
 const router = async () => {
   const request = parseRequestUrl();
@@ -19,7 +25,7 @@ const router = async () => {
     (request.resource ? `/${request.resource}` : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? `/${request.verb}` : "");
-  const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+  const screen = routes[parseUrl] ? routes[parseUrl] : error;
   // console.log(window.isValidUser);
   // let screen;
   // if (window.isValidUser) {

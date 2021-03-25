@@ -77,8 +77,8 @@ modalBtn.addEventListener('click',  openModal);
 
 async function openModal(){
   // if(window.isValidUser){
-  modal.style.display = "block";
-  const content =  document.getElementsByClassName('cartcard')[0];
+ modal.style.display = "block";
+ const content =  document.getElementsByClassName('cartcard')[0];
  const res = await fetch("http://localhost:5000/api/cart/items", {
       headers: {
         "Content-type": "application/json",

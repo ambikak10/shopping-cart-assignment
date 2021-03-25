@@ -1,5 +1,5 @@
-const {router} = require("../index.js");
+const {parseUrl} = require("../supportingJSFiles/utils");
 
 test("to be an object", () => {
-  expect(router).assertions();
+  expect(parseUrl).assertions();
 });
