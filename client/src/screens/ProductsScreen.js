@@ -2,25 +2,8 @@ import { parseRequestUrl } from "../supportingJSFiles/utils.js";
  
 class ProductsScreen {
   async render() {
-   const resCategories = await fetch("http://localhost:5000/api/categories", {
-     headers: {
-       "Content-type": "application/json",
-     },
-   });
-   if (!resCategories || !resCategories.ok) {
-     return "<div>Error in getting products</div>";
-   }
-   const categories = await resCategories.json();
-
-   const resProducts = await fetch("http://localhost:5000/api/products", {
-     headers: {
-       "Content-type": "application/json",
-     },
-   });
-   if (!resProducts || !resProducts.ok) {
-     return "<div>Error in getting products</div>";
-   }
-   let products = await resProducts.json();
+  const categories = await globalStore.getCategories();
+  let products = globalStore.products;
    const request = parseRequestUrl();
    let _id = request.id;
    if (_id) {
@@ -56,11 +39,11 @@ class ProductsScreen {
                 return `
                 <div class='lg-3 products-page-card' aria-label="product-details" tabindex='0'>
                   <p>${item.name}</p>
-                  <img src=${item.imageURL}  tabindex='0' alt=${item.name}/>
+                  <img src=${item.imageURL} alt=${item.name}/>
                   <section>${item.description}</section>
                   <div>
                     <span>MRP Rs.${item.price}</span>
-                    <button class="buy-now" onclick="return addToCart('${item.id}', null)">
+                    <button class="buy-now" onclick="return cartStore.addToCart('${item.id}','${item.sku}', '${item.name}', '${item.description}', ${item.price}, '${item.imageURL}')">
                       Buy Now
                     </button>
                   </div>
@@ -73,7 +56,7 @@ class ProductsScreen {
     </div>
    
     <div class="mobile-view">
-    <select id="mySelect" name="categories" onchange="return selectChangeHandler()" >
+    <select id="mySelect" name="categories" onchange="return globalStore.selectChangeHandler()" >
     <option>Categories</option>
      ${categories.map((item) => {
        if (item.id === _id) {
@@ -93,11 +76,11 @@ class ProductsScreen {
           
      <p>${item.name}</p>
       <div class="col-6">
-   <img src=${item.imageURL}  tabindex='0' alt=${item.name}>
+   <img src=${item.imageURL} alt=${item.name}>
      </div>
         <div class="col-6 desc">
          <section>${item.description}</section>
-         <button onclick="return addToCart('${item.id}', null, null)">Buy now @ MRP Rs.${item.price}</button>
+         <button onclick="return cartStore.addToCart('${item.id}','${item.sku}', '${item.name}', '${item.description}', ${item.price}, '${item.imageURL}')">Buy now @ MRP Rs.${item.price}</button>
          </div>
      </div>
      `;

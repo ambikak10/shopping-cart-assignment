@@ -15,7 +15,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabka Bazaar</title>
+    <script src="./src/supportingJSFiles/generalModel.js"></script>
+    <script src="./src/supportingJSFiles/cartModel.js">
+      </script>
 
+    <script src='./src/screens/cartScreen.js'></script>
 
  
 </head>
@@ -26,7 +30,7 @@
       <section aria-label="categories">
         <ul>
           <li>
-            <a href="/client"><img src="./assets/logo.png" alt='sabka-bazar site logo' /></a>
+            <a href="/client/#/login"><img src="./assets/logo.png" alt='sabka-bazar site logo' /></a>
           </li>
           <li class='home-products'>
             <a role="button"href='/client/#/home'>Home</a>
@@ -43,12 +47,11 @@
             <a role="button"href='/client/#/login'>Login</a>
           </li>
           <li>
-            <!-- <a href='/client/#/cart'> -->
               <button id="modal-btn"
              >
                 <img src="./assets/cart.svg" alt='cart-logo' /><span id="items"></span>
               </button>
-            <!-- </a> -->
+
           </li>
         </ul>
       </section>
@@ -69,13 +72,11 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <!-- slick script end -->
-  <script src="./src/supportingJSFiles/model.js"></script>
-    <script type="text/javascript" src="./src/screens/cartFunctionality.js"></script>
-    <script type="text/javascript" src="./src/supportingJSFiles/products.js"></script>
-  <script type="module" src="./src/index.js"></script>
 
+ <script type="module" src="./src/index.js"></script>
+ <script type='text/javascript' src="./src/screens/overlay.js"></script>
 
-  <!--<script src="./dist/main.js"></script> -->
+  <!-- <script src="./dist/main.js"></script> -->
 </body>
 
 </html>

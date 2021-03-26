@@ -39,7 +39,7 @@ class SignupScreen{
           if(newUser){
              window.location.href = "/client/#/home";
           } else {
-             alert('This is not a registered email')
+             alert('This email already exists')
           }
        }
      });

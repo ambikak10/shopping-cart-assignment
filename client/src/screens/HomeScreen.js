@@ -10,8 +10,9 @@ class HomeScreen {
    });
   }
   async render() {
-    var categories =  await globalStore.getCategories();
-    var banners = await globalStore.getBanners();
+    const categories =  globalStore.categories;
+    const banners = globalStore.banners;
+
      if (categories && categories.length > 0) {
        categories.sort(function (a, b) {
          return a.order - b.order;

@@ -25,37 +25,37 @@ app.get("/", (req, res) => {
 // @route   POST api/signup
 // @desc    Signup a user
 
-app.post("/api/signup", (req, res) => {
-  if(auth.length > 0){
-    for (var i = 0; i < auth.length; i++) {
-      if (auth[i].email == req.body.email) {
-      return res.send(JSON.stringify({ err: "Email already exists" }));
-      } 
-    }
-  } else {
-     auth.push(req.body);
-     return res.send(JSON.stringify({ success: "Signup successful" }));
-  }
-});
+// app.post("/api/signup", (req, res) => {
+//   if(auth.length > 0){
+//     for (var i = 0; i < auth.length; i++) {
+//       if (auth[i].email == req.body.email) {
+//       return res.send(JSON.stringify({ err: "Email already exists" }));
+//       } 
+//     }
+//   } else {
+//      auth.push(req.body);
+//      return res.send(JSON.stringify({ success: "Signup successful" }));
+//   }
+// });
 
 
 // @route   POST api/login
 // @desc    Login a user
 
-app.post("/api/login", (req, res) => {
-  console.log(req.body);
-  for(var i = 0; i < auth.length; i++){
-    if(auth[i].email == req.body.email){
-      if(auth[i].password == req.body.password){
-     return res.send(JSON.stringify({isAuthenticated : true}))
-      } else {
-        return res.send(JSON.stringify({ err: "Password is incorrect" }));
-      }
-  } 
-}
-    console.log("email not verified");
-    return res.send(JSON.stringify({ err: "This is not a registered email" }));
-});
+// app.post("/api/login", (req, res) => {
+//   console.log(req.body);
+//   for(var i = 0; i < auth.length; i++){
+//     if(auth[i].email == req.body.email){
+//       if(auth[i].password == req.body.password){
+//      return res.send(JSON.stringify({isAuthenticated : true}))
+//       } else {
+//         return res.send(JSON.stringify({ err: "Password is incorrect" }));
+//       }
+//   } 
+// }
+//     console.log("email not verified");
+//     return res.send(JSON.stringify({ err: "This is not a registered email" }));
+// });
 
 // @route   GET api/banners
 // @desc    Get carousel banners
@@ -79,50 +79,50 @@ app.get("/api/products", (req, res) => {
 // @route   POST api/cart/add
 // @desc    Add products to the cart
 
-app.post("/api/cart/add", (req, res) => {
-  arrayOfItems.push(req.body._id);
-  let x = arrayOfItems.length;
-    obj['myItems'] = x;
-  let key = req.body._id;
-  if(obj[key]){
-    obj[key]++;
-  } else {
-    obj[key] = 1;
-  }
-  res.send(JSON.stringify(obj));
-});
+// app.post("/api/cart/add", (req, res) => {
+//   arrayOfItems.push(req.body._id);
+//   let x = arrayOfItems.length;
+//     obj['myItems'] = x;
+//   let key = req.body._id;
+//   if(obj[key]){
+//     obj[key]++;
+//   } else {
+//     obj[key] = 1;
+//   }
+//   res.send(JSON.stringify(obj));
+// });
 
 // @route   POST api/cart/remove
 // @desc    Remove products from the cart
 
-app.post("/api/cart/remove", (req, res) => {
-  arrayOfItems.splice(arrayOfItems.indexOf(req.body._id), 1);
-   let x = arrayOfItems.length;
-   obj["myItems"] = x;
-   let key = req.body._id;
-   if (obj[key]) {
-     obj[key]--;
-   } 
-   res.send(JSON.stringify(obj));
-});
+// app.post("/api/cart/remove", (req, res) => {
+//   arrayOfItems.splice(arrayOfItems.indexOf(req.body._id), 1);
+//    let x = arrayOfItems.length;
+//    obj["myItems"] = x;
+//    let key = req.body._id;
+//    if (obj[key]) {
+//      obj[key]--;
+//    } 
+//    res.send(JSON.stringify(obj));
+// });
 
 // @route   GET api/cart/items
 // @desc    get all items in the cart
 
-app.get("/api/cart/items", (req, res) => {
-  var filteredItems = products.filter(product => {
-    return arrayOfItems.indexOf(product.id) !== -1
-  })
-  res.send({allItems: arrayOfItems, filteredItems: filteredItems})
-});
+// app.get("/api/cart/items", (req, res) => {
+//   var filteredItems = products.filter(product => {
+//     return arrayOfItems.indexOf(product.id) !== -1
+//   })
+//   res.send({allItems: arrayOfItems, filteredItems: filteredItems})
+// });
 
 // @route   GET api/cart/clear
 // @desc    Clear all items in the cart on closing the cart
-app.get("/api/cart/clear", (req, res) => { 
-  arrayOfItems = [];
-  obj = { myItems: 0 };
-  res.send({message: "cart cleared"})
-})
+// app.get("/api/cart/clear", (req, res) => { 
+//   arrayOfItems = [];
+//   obj = { myItems: 0 };
+//   res.send({message: "cart cleared"})
+// })
 
 const port = 5000;
 

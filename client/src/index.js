@@ -60,20 +60,25 @@ const router = async () => {
   //     screen = Error404Screen;
   //   }
   // }
-  const res = await fetch("http://localhost:5000/api/cart/items", {
-    headers: {
-      "Content-type": "application/json",
-    },
-  });
-  const cartItems = await res.json();
-  const totalItems = cartItems.allItems ? cartItems.allItems.length : 0;
-  if(totalItems){
-  document.getElementById("items").innerHTML = `${totalItems}  items`
-  };
+  // const res = await fetch("http://localhost:5000/api/cart/items", {
+  //   headers: {
+  //     "Content-type": "application/json",
+  //   },
+  // });
+  // const cartItems = await res.json();
+  // const totalItems = cartItems.allItems ? cartItems.allItems.length : 0;
+  // if (totalItems) {
+  //   document.getElementById("items").innerHTML = `${totalItems}  items`;
+  // }
+
+  document.getElementById("items").innerHTML =
+  cartStore.totalItemsInCart.length + ` items`;
+  await globalStore.getProducts();
+  await globalStore.getCategories();
+  await globalStore.getBanners();
   const main = document.getElementById("middle");
   main.innerHTML = await screen.render();
-  if (screen.after_render) screen.after_render(window);
-  
-};
+  if (screen.after_render) screen.after_render();
+};;
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);
