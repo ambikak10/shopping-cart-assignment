@@ -10,29 +10,14 @@ class HomeScreen {
    });
   }
   async render() {
-     const resCategories = await fetch("http://localhost:5000/api/categories", {
-       headers: {
-         "Content-type": "application/json",
-       },
-     });
-     if (!resCategories || !resCategories.ok) {
-       return "<div>Error in getting products</div>";
-     }
-     const resBanners = await fetch("http://localhost:5000/api/banners", {
-       headers: {
-         "Content-type": "application/json",
-       },
-     });
-     if (!resBanners || !resBanners.ok) {
-       return "<div>Error </div>";
-     }
-     const categories = await resCategories.json();
+    var categories =  await globalStore.getCategories();
+    var banners = await globalStore.getBanners();
      if (categories && categories.length > 0) {
        categories.sort(function (a, b) {
          return a.order - b.order;
        });
      }
-     const banners = await resBanners.json();
+
      return `
       <div class='container container-slick'>
        <div class="carousel">
@@ -96,8 +81,9 @@ class HomeScreen {
       </div>`;
   }
 }
-/*const HomeScreen = {
-  after_render: () => {
+/*
+const HomeScreen = {
+  after_render() {
             $(document).ready(function () {
               $(".carousel").slick({
                 slidesToShow: 1,
@@ -107,7 +93,7 @@ class HomeScreen {
               });
             });
   },
-  render: async () => {
+  async render(){
      const resCategories = await fetch("http://localhost:5000/api/categories", {
        headers: {
          "Content-type": "application/json",
@@ -193,7 +179,7 @@ class HomeScreen {
         }
       </div>`;
   }
-} */
+}*/
 export default HomeScreen;
 
     

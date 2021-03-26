@@ -73,6 +73,7 @@ const router = async () => {
   const main = document.getElementById("middle");
   main.innerHTML = await screen.render();
   if (screen.after_render) screen.after_render(window);
+  
 };
 window.addEventListener("load", router);
 window.addEventListener("hashchange", router);

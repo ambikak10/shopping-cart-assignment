@@ -1,5 +1,6 @@
 class SignupScreen{
-  after_render(window){
+ 
+  after_render(){
      const password1 = document.getElementById("password1");
      const password2 = document.getElementById("password2");
      const email = document.getElementById("signup-email");
@@ -33,31 +34,13 @@ class SignupScreen{
          e.preventDefault();
          errorElement.innerText = messages.join(", ");
        } else {
-         e.preventDefault();
-         fetch("http://localhost:5000/api/signup", {
-           method: "POST",
-
-           // Adding body or contents to send
-           body: JSON.stringify({
-             email: email.value,
-             password: password1.value,
-           }),
-           // Adding headers to the request
-           headers: {
-             "Content-type": "application/json",
-           },
-         })
-           .then((response) => response.json())
-           .then((body) => {
-             if (body.err) {
-               alert(body.err);
-             } else {
-               console.log(window.isValidUser);
-               window.isValidUser = true;
-               console.log(window.isValidUser);
-               window.location.href = "/client/#/home";
-             }
-           });
+          e.preventDefault();
+          var newUser = globalStore.signup(email.value, password1.value) ;
+          if(newUser){
+             window.location.href = "/client/#/home";
+          } else {
+             alert('This is not a registered email')
+          }
        }
      });
   }

@@ -3,48 +3,15 @@ class LoginScreen {
     const password = document.getElementById("password");
     const form = document.getElementById("loginForm");
     const email = document.getElementById("login-email");
-    const errorElement = document.getElementById("error");
-    let numbers = /[0-9]/g;
-    let alphabets = /[a-zA-Z]/g;
-    let isAuthenticated;
-   isAuthenticated = form.addEventListener("submit", async(e) => {
+    form.addEventListener("submit", async(e) => {
      e.preventDefault();
-        fetch("http://localhost:5000/api/login", {
-          method: "POST",
-
-          // Adding body or contents to send
-          body: JSON.stringify({
-            email: email.value,
-            password: password.value,
-          }),
-
-          // Adding headers to the request
-          headers: {
-            "Content-type": "application/json",
-          },
-        }).then((response) => response.json()).then((body) =>{
-          console.log(body)
-          if(body.err) { 
-            alert(body.err);
-          } else if(body.isAuthenticated) {
-            // window.isValidUser = body.isAuthenticated;
-            isAuthenticated =  body.isAuthenticated;
-            //console.log(isValidUser)
-            window.location.href='/client/#/home'
-            return isAuthenticated;
-          }
-
-        });
-      // }
+       var isAuthenticated = globalStore.login(email.value, password.value)
+       if(isAuthenticated){
+         window.location.href = '/client/#/home';
+       } else {
+         alert("Either you are not a registered user or password is wrong")
+       }
     })
-    // .then((window) => {
-    //   window.isAuthenticated = true;
-    // }).catch(err => {
-    //   console.log(err);
-    // });
-    console.log(isAuthenticated)
-    console.log(window.isValidUser)
-    window.isValidUser = isAuthenticated;
   }
 
   render(){
