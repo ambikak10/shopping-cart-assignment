@@ -22,40 +22,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.resolve("client", "index.html"));
 });
 
-// @route   POST api/signup
-// @desc    Signup a user
-
-// app.post("/api/signup", (req, res) => {
-//   if(auth.length > 0){
-//     for (var i = 0; i < auth.length; i++) {
-//       if (auth[i].email == req.body.email) {
-//       return res.send(JSON.stringify({ err: "Email already exists" }));
-//       } 
-//     }
-//   } else {
-//      auth.push(req.body);
-//      return res.send(JSON.stringify({ success: "Signup successful" }));
-//   }
-// });
-
-
-// @route   POST api/login
-// @desc    Login a user
-
-// app.post("/api/login", (req, res) => {
-//   console.log(req.body);
-//   for(var i = 0; i < auth.length; i++){
-//     if(auth[i].email == req.body.email){
-//       if(auth[i].password == req.body.password){
-//      return res.send(JSON.stringify({isAuthenticated : true}))
-//       } else {
-//         return res.send(JSON.stringify({ err: "Password is incorrect" }));
-//       }
-//   } 
-// }
-//     console.log("email not verified");
-//     return res.send(JSON.stringify({ err: "This is not a registered email" }));
-// });
 
 // @route   GET api/banners
 // @desc    Get carousel banners
@@ -75,6 +41,24 @@ app.get("/api/categories", (req, res) => {
 app.get("/api/products", (req, res) => {
   res.send(products);
 });
+
+const port = 5000;
+
+app.listen(port, () => console.log(`Server running on port ${port}`));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // @route   POST api/cart/add
 // @desc    Add products to the cart
@@ -124,7 +108,40 @@ app.get("/api/products", (req, res) => {
 //   res.send({message: "cart cleared"})
 // })
 
-const port = 5000;
+// @route   POST api/signup
+// @desc    Signup a user
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+// app.post("/api/signup", (req, res) => {
+//   if(auth.length > 0){
+//     for (var i = 0; i < auth.length; i++) {
+//       if (auth[i].email == req.body.email) {
+//       return res.send(JSON.stringify({ err: "Email already exists" }));
+//       } 
+//     }
+//   } else {
+//      auth.push(req.body);
+//      return res.send(JSON.stringify({ success: "Signup successful" }));
+//   }
+// });
+
+
+// @route   POST api/login
+// @desc    Login a user
+
+// app.post("/api/login", (req, res) => {
+//   console.log(req.body);
+//   for(var i = 0; i < auth.length; i++){
+//     if(auth[i].email == req.body.email){
+//       if(auth[i].password == req.body.password){
+//      return res.send(JSON.stringify({isAuthenticated : true}))
+//       } else {
+//         return res.send(JSON.stringify({ err: "Password is incorrect" }));
+//       }
+//   } 
+// }
+//     console.log("email not verified");
+//     return res.send(JSON.stringify({ err: "This is not a registered email" }));
+// });
+
+
 

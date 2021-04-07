@@ -1,8 +1,8 @@
 import { parseRequestUrl } from "../supportingJSFiles/utils.js";
  
-class ProductsScreen {
-  async render() {
-  const categories = await globalStore.getCategories();
+const ProductsScreen = {
+  render: () => {
+  const categories = globalStore.categories;
   let products = globalStore.products;
    const request = parseRequestUrl();
    let _id = request.id;

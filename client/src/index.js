@@ -5,19 +5,14 @@ import Error404Screen from "./screens/Error404Screen.js";
 import SignupScreen from "./screens/SignupScreen.js";
 import { parseRequestUrl } from "./supportingJSFiles/utils.js";
 
-const home = new HomeScreen();
-const login = new LoginScreen();
-const error = new Error404Screen();
-const signup = new SignupScreen();
-const products = new ProductsScreen();
 
 const routes = {
-  "/": login,
-  "/home": home,
-  "/products": products,
-  "/signup": signup,
-  "/login": login,
-  "/products/:id": products,
+  "/": LoginScreen,
+  "/home": HomeScreen,
+  "/products": ProductsScreen,
+  "/signup": SignupScreen,
+  "/login": LoginScreen,
+  "/products/:id": ProductsScreen,
 };
 const router = async () => {
   const request = parseRequestUrl();
@@ -25,8 +20,55 @@ const router = async () => {
     (request.resource ? `/${request.resource}` : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? `/${request.verb}` : "");
-  const screen = routes[parseUrl] ? routes[parseUrl] : error;
-  // console.log(window.isValidUser);
+  const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
+  
+  document.getElementById("items").innerHTML =
+  cartStore.totalItemsInCart.length + ` items`;
+  await globalStore.getProducts();
+  await globalStore.getCategories();
+  await globalStore.getBanners();
+  const main = document.getElementById("middle");
+  main.innerHTML = screen.render();
+  if (screen.after_render) screen.after_render();
+};;
+window.addEventListener("load", router);
+window.addEventListener("hashchange", router);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// console.log(window.isValidUser);
   // let screen;
   // if (window.isValidUser) {
   //   console.log(window.isValidUser)
@@ -70,15 +112,3 @@ const router = async () => {
   // if (totalItems) {
   //   document.getElementById("items").innerHTML = `${totalItems}  items`;
   // }
-
-  document.getElementById("items").innerHTML =
-  cartStore.totalItemsInCart.length + ` items`;
-  await globalStore.getProducts();
-  await globalStore.getCategories();
-  await globalStore.getBanners();
-  const main = document.getElementById("middle");
-  main.innerHTML = await screen.render();
-  if (screen.after_render) screen.after_render();
-};;
-window.addEventListener("load", router);
-window.addEventListener("hashchange", router);

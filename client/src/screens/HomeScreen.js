@@ -1,5 +1,5 @@
-class HomeScreen {
-  after_render() {
+const HomeScreen = {
+  after_render : () => {
    $(document).ready(function () {
      $(".carousel").slick({
        slidesToShow: 1,
@@ -8,8 +8,8 @@ class HomeScreen {
        arrows: true,
      });
    });
-  }
-  async render() {
+  },
+  render: () => {
     const categories =  globalStore.categories;
     const banners = globalStore.banners;
 

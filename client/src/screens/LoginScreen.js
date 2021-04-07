@@ -1,5 +1,5 @@
-class LoginScreen {
-  after_render(){
+const LoginScreen =  {
+  after_render: () => {
     const password = document.getElementById("password");
     const form = document.getElementById("loginForm");
     const email = document.getElementById("login-email");
@@ -12,9 +12,9 @@ class LoginScreen {
          alert("Either you are not a registered user or password is wrong")
        }
     })
-  }
+  },
 
-  render(){
+  render: () => {
     return `
     <div class='login'>
         <div class="d-none d-sm-block d-sm-none d-md-block" tabindex='0'>

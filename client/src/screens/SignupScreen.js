@@ -1,6 +1,6 @@
-class SignupScreen{
+const SignupScreen ={
  
-  after_render(){
+  after_render: () => {
      const password1 = document.getElementById("password1");
      const password2 = document.getElementById("password2");
      const email = document.getElementById("signup-email");
@@ -43,8 +43,8 @@ class SignupScreen{
           }
        }
      });
-  }
-  render(){
+  },
+  render:() =>{
    return `
       <div class='container'>
       <div class='login'>

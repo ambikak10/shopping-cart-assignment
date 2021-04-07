@@ -132,7 +132,7 @@
   {
     "name": "Listerine Mouthwash - Cool Mint, 250 ml",
     "imageURL": "/static/images/products/beauty-hygiene/listerine.jpg",
-    "description": "Listerine Cool mint Antibacterial Mouthwash is rapid & easy to use, a 30 second \"slosh\" with Listerine after brushing and flossing reaches parts of the mouth that may be missed. Used two times daily, Listerine provides 24-hour defence against plaque and lasting bright breath assurance.",
+    "description": "Listerine Cool mint Antibacterial Mouthwash is rapid & easy to use, a 30 second slosh with Listerine after brushing and flossing reaches parts of the mouth that may be missed. Used two times daily, Listerine provides 24-hour defence against plaque and lasting bright breath assurance.",
     "price": 109,
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
@@ -172,7 +172,7 @@
   {
     "name": "Close Up Ever Fresh Red Hot Gel Toothpaste, 150 gm",
     "imageURL": "/static/images/products/beauty-hygiene/closeup.jpg",
-    "description": " Closeup's unique Active Zinc Mouthwash not only cleans deep corners of your mouth of residual germs it also gives you upto 12 Hours Fresh Breath.",
+    "description": " Closeup unique Active Zinc Mouthwash not only cleans deep corners of your mouth of residual germs it also gives you upto 12 Hours Fresh Breath.",
     "price": 82,
     "stock": 50,
     "category": "5b68994e3d1a866534f516df",
@@ -180,7 +180,7 @@
     "id": "5b6c727801a7c38429530894"
   },
   {
-    "name": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128's pack",
+    "name": "Pampers Diapers Pants - Large Size, Monthly Box Pack, New, 128s pack",
     "imageURL": "/static/images/products/baby/pampers.jpg",
     "description": "Pampers dry, pants style diapers are the only pants in India with new air channels that provides your baby with breathable dryness overnight.",
     "price": 1999,
@@ -230,7 +230,7 @@
     "id": "5b6c758301a7c38429530899"
   },
   {
-    "name": "Johnson's Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
+    "name": "Johnson Active Kids Shampoo - Shiny Drops With Argan Oil, 100 ml",
     "imageURL": "/static/images/products/baby/shampoo.jpg",
     "description": "A hair care product range specifically for kids aged 2 years and above. This mild shiny drops shampoo formula has been developed to boost natural shine & help reduce frizz, leaving hair silky smooth and healthy looking.",
     "price": 95,
