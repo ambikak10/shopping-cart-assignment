@@ -1,25 +1,27 @@
+import globalStore from "../supportingJSFiles/generalModel.js";
+
 const HomeScreen = {
-  after_render : () => {
-   $(document).ready(function () {
-     $(".carousel").slick({
-       slidesToShow: 1,
-       slidesToScroll: 1,
-       dots: true,
-       arrows: true,
-     });
-   });
+  after_render: () => {
+    $(document).ready(function () {
+      $(".carousel").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        arrows: true,
+      });
+    });
   },
   render: () => {
-    const categories =  globalStore.categories;
+    const categories = globalStore.categories;
     const banners = globalStore.banners;
 
-     if (categories && categories.length > 0) {
-       categories.sort(function (a, b) {
-         return a.order - b.order;
-       });
-     }
+    if (categories && categories.length > 0) {
+      categories.sort(function (a, b) {
+        return a.order - b.order;
+      });
+    }
 
-     return `
+    return `
       <div class='container container-slick'>
        <div class="carousel">
       ${banners
@@ -80,8 +82,8 @@ const HomeScreen = {
             .join("\n")
         }
       </div>`;
-  }
-}
+  },
+};
 /*
 const HomeScreen = {
   after_render() {
@@ -182,5 +184,3 @@ const HomeScreen = {
   }
 }*/
 export default HomeScreen;
-
-    

@@ -4,7 +4,7 @@ import ProductsScreen from "./screens/ProductsScreen.js";
 import Error404Screen from "./screens/Error404Screen.js";
 import SignupScreen from "./screens/SignupScreen.js";
 import { parseRequestUrl } from "./supportingJSFiles/utils.js";
-
+import globalStore from "./supportingJSFiles/generalModel.js"
 
 const routes = {
   "/": LoginScreen,
@@ -16,17 +16,19 @@ const routes = {
 };
 const router = async () => {
   const request = parseRequestUrl();
+  console.log(request)
   var parseUrl =
     (request.resource ? `/${request.resource}` : "/") +
     (request.id ? "/:id" : "") +
     (request.verb ? `/${request.verb}` : "");
   const screen = routes[parseUrl] ? routes[parseUrl] : Error404Screen;
-  
+      
   document.getElementById("items").innerHTML =
-  cartStore.totalItemsInCart.length + ` items`;
+    cartStore.totalItemsInCart.length + ` items`;
   await globalStore.getProducts();
   await globalStore.getCategories();
   await globalStore.getBanners();
+
   const main = document.getElementById("middle");
   main.innerHTML = screen.render();
   if (screen.after_render) screen.after_render();

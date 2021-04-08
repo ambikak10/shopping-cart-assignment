@@ -2,7 +2,6 @@ function User(emailID, password){
   this.emailID = emailID;
   this.password = password;
 }
-
 class Store {
   #users;
   constructor() {
@@ -84,7 +83,7 @@ class Store {
     }
   }
 }
-
 const globalStore = new Store();
-//Object.freeze(globalStore);
-var g = new Store()
+export default globalStore;
+
+

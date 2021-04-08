@@ -35,6 +35,5 @@ function emptyCartScreen(content){
               </button>
             </div>
           </div>`;
- 
 
 }

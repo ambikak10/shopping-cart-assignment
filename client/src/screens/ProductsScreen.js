@@ -1,4 +1,6 @@
 import { parseRequestUrl } from "../supportingJSFiles/utils.js";
+import globalStore from "../supportingJSFiles/generalModel.js";
+
  
 const ProductsScreen = {
   render: () => {
