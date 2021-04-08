@@ -15,14 +15,11 @@ class Store {
     }
     return Store.instance;
   }
-  getUsers(){
-    return this.#users;
-  }
+
   signup(emailID, password1) {
-    let users = this.getUsers();
-    if (!users.emailID) {
+    if (!this.#users.emailID) {
       var user = new User(emailID, password1);
-      users.emailID = user;
+      this.#users.emailID = user;
       return true;
     } else {
       return false;
@@ -30,8 +27,7 @@ class Store {
   }
 
   login(emailID, password) {
-    let users  = this.getUsers();
-    if (users.emailID && users.emailID.password === password) {
+    if (this.#users.emailID && this.#users.emailID.password === password) {
       return true;
     }
     return false;

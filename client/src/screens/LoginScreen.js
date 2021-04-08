@@ -1,17 +1,18 @@
-const LoginScreen =  {
+import globalStore from "../supportingJSFiles/generalModel.js";
+const LoginScreen = {
   after_render: () => {
     const password = document.getElementById("password");
     const form = document.getElementById("loginForm");
     const email = document.getElementById("login-email");
-    form.addEventListener("submit", async(e) => {
-     e.preventDefault();
-       var isAuthenticated = globalStore.login(email.value, password.value)
-       if(isAuthenticated){
-         window.location.href = '/client/#/home';
-       } else {
-         alert("Either you are not a registered user or password is wrong")
-       }
-    })
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      var isAuthenticated = globalStore.login(email.value, password.value);
+      if (isAuthenticated) {
+        window.location.href = "/client/#/home";
+      } else {
+        alert("Either you are not a registered user or password is wrong");
+      }
+    });
   },
 
   render: () => {
@@ -37,16 +38,10 @@ const LoginScreen =  {
   
   </div>
      <div tabindex="0"aria-live="assertive" role="alert" id="error"></div>
-</div>`; 
-}
-}
+</div>`;
+  },
+};
 export default LoginScreen;
-
-
-
-
-
-
 
 /*
 const LoginScreen = {
