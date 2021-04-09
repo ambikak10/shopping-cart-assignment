@@ -66,6 +66,10 @@ class Store {
   };
 }
 const globalStore = new Store();
+const b =  new Store();
+const a = new Store();
+console.log(a === b)
+//console.log(globalStore.#users)
 export default globalStore;
 
 

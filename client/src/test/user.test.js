@@ -1,7 +1,7 @@
 import globalStore from "../supportingJSFiles/generalModel.js";
 
 
-test("should not authenticate the user", () => {
+test("should not login the non-registered user", () => {
  expect(globalStore.login("ak@gmail.com", "abcd")).toBeFalsy();
 })
 
