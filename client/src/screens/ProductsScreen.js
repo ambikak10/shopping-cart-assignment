@@ -58,7 +58,7 @@ const ProductsScreen = {
     </div>
    
     <div class="mobile-view">
-    <select id="mySelect" name="categories" onchange="return globalStore.selectChangeHandler()" >
+    <select id="mySelect" name="categories" onchange="return cartStore.selectChangeHandler()" >
     <option>Categories</option>
      ${categories.map((item) => {
        if (item.id === _id) {

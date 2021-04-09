@@ -11,6 +11,11 @@ function openModal(){
   let map = cartStore.cart;
   let cartTotal = 0;
   if(totalItemsNumber !== 0){
+     for (var i = 0; i < itemInCart.length; i++) {
+       if (itemInCart[i].id in map) {
+         cartTotal = cartTotal + itemInCart[i].price * map[itemInCart[i].id];
+       }
+     }
   cartScreen(totalItemsNumber, content, cartTotal, itemInCart, map);
   } else {
     emptyCartScreen(content)

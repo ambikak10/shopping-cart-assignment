@@ -1,10 +1,4 @@
 function cartScreen(totalItemsNumber, content, cartTotal, itemInCart, map){
-   if(totalItemsNumber !== 0){
-  for(var i = 0; i < itemInCart.length; i++){
-    if(itemInCart[i].id in map){
-        cartTotal = cartTotal + itemInCart[i].price * map[itemInCart[i].id];
-    }
-  }
   content.innerHTML = ` <div tabindex='0' aria-hidden="false"aria-label="open cart items"class='flex-box'>
           <div class='cart-flex-nav'>
             <p>
@@ -70,4 +64,4 @@ function cartScreen(totalItemsNumber, content, cartTotal, itemInCart, map){
       </div>
     </div>`;
  }
-}
+

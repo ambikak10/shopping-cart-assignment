@@ -64,20 +64,6 @@ class Store {
     this.products = products;
     return this.products;
   };
-
-  selectChangeHandler(){
-    let x = document.getElementById("mySelect").value;
-    console.log(x);
-  
-    let sel = document.getElementById("mySelect");
-      console.log(sel);
-    let text = sel.options[sel.selectedIndex].text;
-    if (text == "Categories") {
-      window.location.href = `/client/#/products`;
-    } else {
-      window.location.href = `/client/#/products/${x}`;
-    }
-  }
 }
 const globalStore = new Store();
 export default globalStore;

@@ -93,6 +93,20 @@ if (quantity == "0") {
 }
 document.getElementById("cart-price").innerHTML = sum;
 }
+
+Cart.prototype.selectChangeHandler = function(){
+    let x = document.getElementById("mySelect").value;
+    console.log(x);
+  
+    let sel = document.getElementById("mySelect");
+      console.log(sel);
+    let text = sel.options[sel.selectedIndex].text;
+    if (text == "Categories") {
+      window.location.href = `/client/#/products`;
+    } else {
+      window.location.href = `/client/#/products/${x}`;
+    }
+  }
 }
 
 var cartStore = new Cart();

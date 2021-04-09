@@ -6,7 +6,7 @@ test("to be url home", () => {
 });
 
 
-test("to be url home", () => {
+test("to be url product id", () => {
   const obj = splitFunction("#/products/5b6899123d1a866534f516de");
   expect(obj.id).toBe("5b6899123d1a866534f516de");
 });
